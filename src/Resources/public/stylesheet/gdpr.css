@@ -1,0 +1,78 @@
+.gdprpopup-container {
+  background-color: rgba(25, 25, 25, 0.9);
+  color: #efefef;
+  padding: 5px 20px;
+  font-size: 12px;
+  line-height: 1.2em;
+  text-align: center;
+  display: none;
+  z-index: 9999999;
+}
+
+.gdprpopup-container-top,
+.gdprpopup-container-fixedtop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.gdprpopup-container-fixedtop {
+  position: fixed;
+}
+
+.gdprpopup-container-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.gdprpopup-closebutton {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1;
+  color: #a2a2a2;
+  filter: alpha(opacity=20);
+  position: absolute;
+  font-family: helvetica, arial, verdana, sans-serif;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+}
+
+.gdprpopup-closebutton:hover,
+.gdprpopup-closebutton:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.gdprpopup-body {
+  color: #a2a2a2;
+}
+
+.gdprpopup-buttons {
+  padding: 7px 0 5px 0;
+}
+
+.gdprpopup-button-confirm {
+  color: #f6a21d;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.gdprpopup-button-more {
+  color: #f6a21d;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.gdprpopup-button {
+  margin: 0 10px;
+}
+
+.gdprpopup-button:hover,
+.gdprpopup-button:focus {
+  text-decoration: underline;
+  color: #f6a21d;
+}

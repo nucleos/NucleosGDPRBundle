@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="core23_gdpr.block.information">
+        <source>core23_gdpr.block.information</source>
+        <target>DSGVO Informationen</target>
+      </trans-unit>
+      <trans-unit id="cookie_confirm">
+        <source>cookie_confirm</source>
+        <target>Okay</target>
+      </trans-unit>
+      <trans-unit id="cookie_information">
+        <source>cookie_information</source>
+        <target>Wir verwenden Cookies um eine bessere Benutzererfahrung zu gewährlisten. Wenn Sie diese Webseite weiter verwenden möchten, stimmen Sie der Speicherung von Cookies zu.</target>
+      </trans-unit>
+      <trans-unit id="cookie_data_protection">
+        <source>cookie_data_protection</source>
+        <target>More informations</target>
+      </trans-unit>
+      <trans-unit id="form.label_text">
+        <source>form.label_text</source>
+        <target>Text</target>
+      </trans-unit>
+      <trans-unit id="form.label_url">
+        <source>form.label_url</source>
+        <target>URL</target>
+      </trans-unit>
+      <trans-unit id="form.label_position">
+        <source>form.label_position</source>
+        <target>Position</target>
+      </trans-unit>
+      <trans-unit id="form.choice_top">
+        <source>form.choice_top</source>
+        <target>Oben</target>
+      </trans-unit>
+      <trans-unit id="form.choice_fixedtop">
+        <source>form.choice_fixedtop</source>
+        <target>Oben fixiert</target>
+      </trans-unit>
+      <trans-unit id="form.choice_bottom">
+        <source>form.choice_bottom</source>
+        <target>Unten</target>
+      </trans-unit>
+      <trans-unit id="form.choice_block">
+        <source>form.choice_block</source>
+        <target>Block</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

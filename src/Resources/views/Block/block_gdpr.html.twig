@@ -1,0 +1,18 @@
+<div class="gdprpopup-container gdprpopup-container-{{ settings.position }}">
+    <div class="gdprpopup-body">
+        <p>{{ settings.text|default('cookie_information'|trans({}, 'Core23GDPRBundle')) }}
+        </p>
+    </div>
+    <div class="gdprpopup-buttons">
+        <a href="#" class="gdprpopup-button gdprpopup-button-confirm">
+            {{ 'cookie_confirm'|trans({}, 'Core23GDPRBundle') }}
+        </a>
+
+        {% if settings.url %}
+            <a href="{{ settings.url }}" target="_self" class="gdprpopup-button gdprpopup-button-more">
+                {{ 'cookie_data_protection'|trans({}, 'Core23GDPRBundle') }}
+            </a>
+        {% endif %}
+    </div>
+    <a href="#" class="gdprpopup-closebutton">x</a>
+</div>

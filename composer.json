@@ -1,0 +1,69 @@
+{
+    "name": "core23/gdpr-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle provides a GDPR conform cookie information inside the sonata-project.",
+    "keywords": [
+        "symfony",
+        "gdpr",
+        "dsgvo",
+        "cookie",
+        "sonata",
+        "block",
+        "widget",
+        "bundle"
+    ],
+    "homepage": "https://core23.de",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Gripp",
+            "email": "mail@core23.de"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "sonata-project/admin-bundle": "^3.35",
+        "sonata-project/block-bundle": "^3.9",
+        "sonata-project/core-bundle": "^3.9",
+        "symfony/dependency-injection": "^3.4 || ^4.0",
+        "symfony/expression-language": "^3.4 || ^4.0",
+        "symfony/framework-bundle": "^3.4 || ^4.0",
+        "symfony/options-resolver": "^3.4 || ^4.0",
+        "symfony/templating": "^3.4 || ^4.0"
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.2",
+        "matthiasnoback/symfony-dependency-injection-test": "^2.3",
+        "sllh/composer-lint": "^1.0",
+        "symfony/phpunit-bridge": "^4.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
+    },
+    "suggest" : {
+        "core23/shariff-bundle": "If you need a GDPR conform social media widget integration"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core23\\GDPRBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Core23\\GDPRBundle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer bin all install --ansi"
+        ],
+        "post-update-cmd": [
+            "@composer bin all update --ansi"
+        ]
+    }
+}
