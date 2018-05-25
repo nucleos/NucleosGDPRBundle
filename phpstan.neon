@@ -1,4 +1,2 @@
 parameters:
     ignoreErrors:
-        # Symfony DI
-        - '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children\(\).#'
