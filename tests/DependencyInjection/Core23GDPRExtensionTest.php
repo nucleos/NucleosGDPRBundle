@@ -19,6 +19,8 @@ final class Core23GDPRExtensionTest extends AbstractExtensionTestCase
     public function testLoadDefault(): void
     {
         $this->load();
+
+        $this->assertContainerBuilderHasService('core23_gdpr.block.information');
     }
 
     protected function getContainerExtensions(): array
