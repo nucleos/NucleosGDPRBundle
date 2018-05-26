@@ -56,7 +56,7 @@ sonata_block:
 ```twig
 {# template.twig #}
 
-{{ sonata_block_render({ 'type': 'core23_gdpro.block.information' }, {
+{{ sonata_block_render({ 'type': 'core23_gdpr.block.information' }, {
     'url': 'https://example.com/gdpr',
     'text': 'Example text' // optional
 }) }}
