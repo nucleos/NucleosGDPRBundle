@@ -51,9 +51,7 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
      */
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
-        $request = $this->request->getMasterRequest();
-
-        if ($request && $request->cookies->getBoolean('GDPR_COOKIE_LAW_CONSENT', false)) {
+        if ($this->hasGdprCookie()) {
             return new Response();
         }
 
@@ -63,7 +61,7 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
             'block'    => $blockContext->getBlock(),
         ];
 
-        return $this->renderResponse($blockContext->getTemplate(), $parameters, $response);
+        return $this->renderPrivateResponse($blockContext->getTemplate(), $parameters, $response);
     }
 
     /**
@@ -113,6 +111,10 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
      */
     public function getJavascripts($media)
     {
+        if ($this->hasGdprCookie()) {
+            return [];
+        }
+
         return [
             '/assets/javascript/gdpr.js',
         ];
@@ -123,6 +125,10 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
      */
     public function getStylesheets($media)
     {
+        if ($this->hasGdprCookie()) {
+            return [];
+        }
+
         return [
             '/assets/stylesheet/gdpr.css',
         ];
@@ -136,5 +142,15 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
         return new Metadata($this->getName(), $code ?? $this->getName(), false, 'Core23GDPRBundle', [
             'class' => 'fa fa-balance-scale',
         ]);
+    }
+
+    /**
+     * @return bool
+     */
+    private function hasGdprCookie(): bool
+    {
+        $request = $this->request->getMasterRequest();
+
+        return $request && $request->cookies->getBoolean('GDPR_COOKIE_LAW_CONSENT', false);
     }
 }
