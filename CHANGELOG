@@ -1,0 +1,7 @@
+30/05/2018 10:58  0.1.1  Misc fixes
+b256e73 Fixed typo in translation
+f5d987a Fixed wrong german translation
+bfd1823 Only load assets if cookie does not exist
+be580a2 Added test
+9c6fd6d Fixed wrong CI URLs
+f4e9082 Fixed typo
