@@ -19,7 +19,7 @@
       </trans-unit>
       <trans-unit id="cookie_data_protection">
         <source>cookie_data_protection</source>
-        <target>More informations</target>
+        <target>Mehr Informationen</target>
       </trans-unit>
       <trans-unit id="form.label_text">
         <source>form.label_text</source>
