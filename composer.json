@@ -37,6 +37,9 @@
         "sllh/composer-lint": "^1.0",
         "symfony/phpunit-bridge": "^4.0"
     },
+    "suggest": {
+        "core23/shariff-bundle": "If you need a GDPR conform social media widget integration"
+    },
     "config": {
         "sort-packages": true
     },
@@ -44,9 +47,6 @@
         "branch-alias": {
             "dev-master": "0.x-dev"
         }
-    },
-    "suggest" : {
-        "core23/shariff-bundle": "If you need a GDPR conform social media widget integration"
     },
     "autoload": {
         "psr-4": {
