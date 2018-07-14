@@ -33,8 +33,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
     private $request;
 
     /**
-     * GDPRInformationBlockService constructor.
-     *
      * @param string          $name
      * @param EngineInterface $templating
      * @param RequestStack    $request
