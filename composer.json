@@ -23,13 +23,13 @@
     "require": {
         "php": "^7.1",
         "sonata-project/admin-bundle": "^3.35",
-        "sonata-project/block-bundle": "^3.9",
+        "sonata-project/block-bundle": "^3.11",
         "sonata-project/core-bundle": "^3.9",
         "symfony/dependency-injection": "^3.4 || ^4.0",
         "symfony/expression-language": "^3.4 || ^4.0",
         "symfony/framework-bundle": "^3.4 || ^4.0",
         "symfony/options-resolver": "^3.4 || ^4.0",
-        "symfony/templating": "^3.4 || ^4.0"
+        "symfony/twig-bundle": "^3.4 || ^4.0"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.2",
