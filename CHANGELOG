@@ -1,3 +1,14 @@
+26/09/2018 16:49  0.2.0  Symfony 4 support
+74443d3 Removed templating dependency
+d1e59cb Updated .editorconfig
+53665ce TRAVIS: Moved dependencies check to allow failures
+6ba014e Removed useless PHPDoc
+ef27d7e Sync config
+e50d099 Added composer-require-checker to build
+d3dd5e4 Sync phpstan config
+d58fc8f Require latest phpstan version
+9832cea Normalize composer.json
+c1acd1f Created issue templates
 30/05/2018 10:58  0.1.1  Misc fixes
 b256e73 Fixed typo in translation
 f5d987a Fixed wrong german translation
