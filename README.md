@@ -13,9 +13,6 @@ GDPRBundle
 [![Code Climate](https://codeclimate.com/github/core23/GDPRBundle/badges/gpa.svg)](https://codeclimate.com/github/core23/GDPRBundle)
 [![Coverage Status](https://coveralls.io/repos/core23/GDPRBundle/badge.svg)](https://coveralls.io/r/core23/GDPRBundle)
 
-[![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/core23)
-[![Donate to this project using PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/gripp)
-
 This bundle provides a GDPR conform cookie information inside the sonata-project.
 
 ## Installation
