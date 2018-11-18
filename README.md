@@ -36,6 +36,11 @@ return [
 ];
 ```
 
+### Assets
+
+It is recommended to use [webpack](https://webpack.js.org/) / [webpack-encore](https://github.com/symfony/webpack-encore) 
+to include the `gdpr.js` and `gdpr.css` file in your page. These files are located in the `assets` folder.
+
 ### Configure the Bundle
 
 Add the block to the `sonata_block` configuration if necessary:

@@ -107,34 +107,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
     /**
      * {@inheritdoc}
      */
-    public function getJavascripts($media)
-    {
-        if ($this->hasGdprCookie()) {
-            return [];
-        }
-
-        return [
-            '/assets/javascript/gdpr.js',
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getStylesheets($media)
-    {
-        if ($this->hasGdprCookie()) {
-            return [];
-        }
-
-        return [
-            '/assets/stylesheet/gdpr.css',
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getBlockMetadata($code = null)
     {
         return new Metadata($this->getName(), $code ?? $this->getName(), false, 'Core23GDPRBundle', [

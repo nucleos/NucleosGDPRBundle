@@ -1,8 +1,13 @@
-(function ($) {
+import jQuery from 'jquery';
+
+// Styles
+import '../css/gdpr.css';
+
+(function (jQuery) {
   "use strict";
 
-  $.fn.gdprCookieLawPopup = (function () {
-    var _self = this;
+  jQuery.fn.gdprCookieLawPopup = (function () {
+    const _self = this;
 
     _self.params = {
       agreementExpiresInDays: 30,
@@ -15,7 +20,7 @@
     };
 
     // Overwrite default parameters if any of those is present
-    var parseParameters = function (settings) {
+    const parseParameters = function (settings) {
       if (settings) {
         if (typeof settings.agreementExpiresInDays !== 'undefined') {
           _self.params.agreementExpiresInDays = settings.agreementExpiresInDays;
@@ -27,20 +32,20 @@
     };
 
     // Storing the consent in a cookie
-    var setUserAcceptsCookies = function (consent) {
-      var d = new Date();
-      var expiresInDays = _self.params.agreementExpiresInDays * 24 * 60 * 60 * 1000;
+    const setUserAcceptsCookies = function (consent) {
+      let d = new Date();
+      const expiresInDays = _self.params.agreementExpiresInDays * 24 * 60 * 60 * 1000;
       d.setTime(d.getTime() + expiresInDays);
-      var expires = "expires=" + d.toGMTString();
+      const expires = "expires=" + d.toGMTString();
       document.cookie = _self.vars.COOKIE_NAME + '=' + consent + "; " + expires + ";path=/";
     };
 
     // Let's see if we have a consent cookie already
-    var userAlreadyAcceptedCookies = function () {
-      var userAcceptedCookies = false;
-      var cookies = document.cookie.split(";");
-      for (var i = 0; i < cookies.length; i++) {
-        var c = cookies[i].trim();
+    const userAlreadyAcceptedCookies = function () {
+      let userAcceptedCookies = false;
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const c = cookies[i].trim();
         if (c.indexOf(_self.vars.COOKIE_NAME) == 0) {
           userAcceptedCookies = c.substring(_self.vars.COOKIE_NAME.length + 1, c.length);
         }
@@ -49,12 +54,12 @@
       return userAcceptedCookies;
     };
 
-    var hideContainer = function () {
-      $('.gdprpopup-container').animate({
+    const hideContainer = function () {
+      jQuery('.gdprpopup-container').animate({
         opacity: 0,
         height: 0
       }, 200, function () {
-        $('.gdprpopup-container').hide(0);
+        jQuery('.gdprpopup-container').hide(0);
       });
     };
 
@@ -73,18 +78,18 @@
         }
         _self.vars.INITIALISED = true;
 
-        $('.gdprpopup-button-confirm').click(function () {
+        jQuery('.gdprpopup-button-confirm').click(function () {
           setUserAcceptsCookies(true);
           hideContainer();
           return false;
         });
-        $('.gdprpopup-closebutton').click(function () {
+        jQuery('.gdprpopup-closebutton').click(function () {
           hideContainer();
           return false;
         });
 
         // Ready to start!
-        $('.gdprpopup-container').show();
+        jQuery('.gdprpopup-container').show();
 
         // In case it's alright to just display the message once
         if (_self.params.autoAcceptCookiePolicy) {
@@ -96,6 +101,6 @@
 }(jQuery));
 
 
-$(function () {
-  $(document).gdprCookieLawPopup().init();
+jQuery(function () {
+  jQuery(document).gdprCookieLawPopup().init();
 });
