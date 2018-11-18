@@ -1,1 +1,1 @@
-import './js/gdpr'
+import './js/gdpr';
