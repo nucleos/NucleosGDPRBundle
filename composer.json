@@ -33,9 +33,7 @@
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.2",
-        "matthiasnoback/symfony-dependency-injection-test": "^2.3",
-        "sllh/composer-lint": "^1.0",
-        "symfony/phpunit-bridge": "^4.0"
+        "sllh/composer-lint": "^1.0"
     },
     "suggest": {
         "core23/shariff-bundle": "If you need a GDPR conform social media widget integration"
