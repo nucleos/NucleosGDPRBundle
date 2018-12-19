@@ -24,7 +24,7 @@
         "php": "^7.2",
         "sonata-project/admin-bundle": "^3.35",
         "sonata-project/block-bundle": "^3.11",
-        "sonata-project/core-bundle": "^3.9",
+        "sonata-project/core-bundle": "^3.13.5",
         "symfony/dependency-injection": "^3.4 || ^4.0",
         "symfony/expression-language": "^3.4 || ^4.0",
         "symfony/framework-bundle": "^3.4 || ^4.0",
