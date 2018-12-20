@@ -109,7 +109,7 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
      */
     public function getBlockMetadata($code = null)
     {
-        return new Metadata($this->getName(), $code ?? $this->getName(), false, 'Core23GDPRBundle', [
+        return new Metadata($this->getName(), $code ?? $this->getName(), null, 'Core23GDPRBundle', [
             'class' => 'fa fa-balance-scale',
         ]);
     }
