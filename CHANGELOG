@@ -1,3 +1,22 @@
+30/12/2018 22:44  0.3.0  Moved bundle assets to "assets" folder
+17dc244 Fixed phpunit config for release command
+e3a3769 Fixed wrong parameter type for Metadata
+af79f62 Added platform workaround for php-cs-fixer tool
+5ac85c8 Require latest phpunit bridge
+b951c66 Removed sonata core-bundle dependency
+003ffb0 Require latest phpunit bridge
+b90ff4f Removed deprecation warnings
+6274ab4 Removed jquery dependency from scripts
+204a2bf Travis: Test against PHP 7.3
+a9aa820 Dropped support for PHP 7.1
+e1a1ffc Fixed CS
+e78d5e8 Fixed syntax error in editorconfig
+b42d2f4 Moved test dependencies to vendor-bin
+b3f4e12 Moved assets outside the src dir
+c7377ce Removed unused theme
+f9566af Removed donation from README
+cd2e474 Updated release config
+5726e2c Updated style config
 26/09/2018 16:49  0.2.0  Symfony 4 support
 74443d3 Removed templating dependency
 d1e59cb Updated .editorconfig
