@@ -27,6 +27,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class GDPRInformationBlockService extends AbstractAdminBlockService
 {
+    public const COOKIE_NAME = 'GDPR_COOKIE_LAW_CONSENT';
+
     /**
      * @var RequestStack
      */
@@ -121,6 +123,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
     {
         $request = $this->request->getMasterRequest();
 
-        return $request && $request->cookies->getBoolean('GDPR_COOKIE_LAW_CONSENT', false);
+        return $request && $request->cookies->getBoolean(self::COOKIE_NAME);
     }
 }
