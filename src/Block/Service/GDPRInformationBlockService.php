@@ -50,7 +50,7 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
         if ($this->hasGdprCookie()) {
-            return new Response();
+            return new Response('', Response::HTTP_NO_CONTENT);
         }
 
         $parameters = [
