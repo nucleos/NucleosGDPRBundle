@@ -10,6 +10,7 @@
 namespace Core23\GDPRBundle\Tests\Block\Service;
 
 use Core23\GDPRBundle\Block\Service\GDPRInformationBlockService;
+use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\BlockBundle\Block\BlockContext;
 use Sonata\BlockBundle\Model\Block;
 use Sonata\BlockBundle\Model\BlockInterface;
@@ -89,5 +90,32 @@ final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
         $response     = $blockService->execute($blockContext);
 
         $this->assertTrue($response->isEmpty());
+    }
+
+    public function testGetBlockMetadata(): void
+    {
+        $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
+
+        $metadata = $blockService->getBlockMetadata('description');
+
+        $this->assertSame('block.service', $metadata->getTitle());
+        $this->assertSame('description', $metadata->getDescription());
+        $this->assertStringStartsWith('data:image/png;base64,', $metadata->getImage());
+        $this->assertSame('Core23GDPRBundle', $metadata->getDomain());
+        $this->assertSame([
+            'class' => 'fa fa-balance-scale',
+        ], $metadata->getOptions());
+    }
+
+    public function testBuildEditForm(): void
+    {
+        $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
+
+        $block = new Block();
+
+        $formMapper = $this->createMock(FormMapper::class);
+        $formMapper->expects($this->once())->method('add');
+
+        $blockService->buildEditForm($formMapper, $block);
     }
 }
