@@ -100,7 +100,8 @@ final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
 
         $this->assertSame('block.service', $metadata->getTitle());
         $this->assertSame('description', $metadata->getDescription());
-        $this->assertStringStartsWith('data:image/png;base64,', $metadata->getImage());
+        $this->assertNotNull($metadata->getImage());
+        $this->assertStringStartsWith('data:image/png;base64,', $metadata->getImage() ?? '');
         $this->assertSame('Core23GDPRBundle', $metadata->getDomain());
         $this->assertSame([
             'class' => 'fa fa-balance-scale',

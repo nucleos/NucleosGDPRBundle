@@ -10,3 +10,6 @@ parameters:
         - vendor-bin/phpstan/vendor/phpstan/phpstan-strict-rules/rules.neon
 
     ignoreErrors:
+        # PHPUnit
+        - '#Parameter \#1 \$formMapper of method Core23\\GDPRBundle\\Block\\Service\\GDPRInformationBlockService::buildEditForm\(\) expects Sonata\\AdminBundle\\Form\\FormMapper, PHPUnit\\Framework\\MockObject\\MockObject given.#'
+
