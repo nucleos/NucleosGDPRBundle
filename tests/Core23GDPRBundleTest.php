@@ -19,6 +19,6 @@ final class Core23GDPRBundleTest extends TestCase
     {
         $bundle = new Core23GDPRBundle();
 
-        $this->assertInstanceOf(BundleInterface::class, $bundle);
+        static::assertInstanceOf(BundleInterface::class, $bundle);
     }
 }
