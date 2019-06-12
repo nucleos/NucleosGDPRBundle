@@ -1,3 +1,25 @@
+11/06/2019 19:22  1.0.0  First stable
+6c7fddf [BUILD] Replaced deprecated "weak_vendors" option
+f66853f Added GitHub sponsoring information
+858965e [PATCH] Fixed CS
+77d0c7f [BUILD] Updated export-ignore files
+5525bc0 [BUILD] Updated build tools
+bcbf329 [BUILD] Removed dependency stage from build matrix
+3b35a4d [BUILD] Removed current copyright date
+a1253c2 [BUILD] Cleanup phpstan config
+5f60bb3 [BUILD] Cleanup phpstan errors
+c5efd0a [BUILD] Fixed phpstan ignore list
+edf6847 [BUILD] Added more tests
+a5832f9 [BUILD] Added more tests
+db9362b [MINOR] Changed status code to 204 when there is no response
+386d509 [BUILD] Added more tests
+d7053b0 [BUILD] Added weak_vendors when calling phpunit
+a4f2f2f [PATCH] Updated CS Fixer config and run
+0d0ec3a [BUILD] Updated phpstan version
+6e7a137 [BUILD] Fixed symfony test setup
+2048134 [MINOR] Removed support for outdated symfony versions
+cfa456f Updated cs-fixer config
+36992d7 Use return types
 30/12/2018 22:44  0.3.0  Moved bundle assets to "assets" folder
 17dc244 Fixed phpunit config for release command
 e3a3769 Fixed wrong parameter type for Metadata
