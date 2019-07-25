@@ -34,11 +34,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
      */
     private $request;
 
-    /**
-     * @param string          $name
-     * @param EngineInterface $templating
-     * @param RequestStack    $request
-     */
     public function __construct(string $name, EngineInterface $templating, RequestStack $request)
     {
         parent::__construct($name, $templating);
@@ -116,9 +111,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
         ]);
     }
 
-    /**
-     * @return bool
-     */
     private function hasGdprCookie(): bool
     {
         $request = $this->request->getMasterRequest();
