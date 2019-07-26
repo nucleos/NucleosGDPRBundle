@@ -41,9 +41,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
         $this->request = $request;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
         if ($this->hasGdprCookie()) {
@@ -59,9 +56,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
         return $this->renderPrivateResponse($blockContext->getTemplate(), $parameters, $response);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function buildEditForm(FormMapper $formMapper, BlockInterface $block): void
     {
         $formMapper->add('settings', ImmutableArrayType::class, [
@@ -88,9 +82,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
         ]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configureSettings(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
@@ -101,9 +92,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
         ]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getBlockMetadata($code = null)
     {
         return new Metadata($this->getName(), $code ?? $this->getName(), null, 'Core23GDPRBundle', [
