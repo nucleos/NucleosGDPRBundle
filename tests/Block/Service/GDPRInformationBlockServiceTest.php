@@ -10,6 +10,7 @@
 namespace Core23\GDPRBundle\Tests\Block\Service;
 
 use Core23\GDPRBundle\Block\Service\GDPRInformationBlockService;
+use PHPUnit\Framework\MockObject\MockObject;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\BlockBundle\Block\BlockContext;
 use Sonata\BlockBundle\Model\Block;
@@ -20,6 +21,9 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
 {
+    /**
+     * @var MockObject|RequestStack
+     */
     private $requestStack;
 
     /**
