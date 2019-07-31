@@ -103,6 +103,6 @@ final class GDPRInformationBlockService extends AbstractAdminBlockService
     {
         $request = $this->request->getMasterRequest();
 
-        return $request && $request->cookies->getBoolean(self::COOKIE_NAME);
+        return null !== $request && $request->cookies->getBoolean(self::COOKIE_NAME);
     }
 }
