@@ -10,15 +10,15 @@
 namespace Core23\GDPRBundle\Tests;
 
 use Core23\GDPRBundle\Core23GDPRBundle;
+use Core23\GDPRBundle\DependencyInjection\Core23GDPRExtension;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
 final class Core23GDPRBundleTest extends TestCase
 {
-    public function testItIsInstantiable(): void
+    public function testGetContainerExtension(): void
     {
         $bundle = new Core23GDPRBundle();
 
-        static::assertInstanceOf(BundleInterface::class, $bundle);
+        static::assertInstanceOf(Core23GDPRExtension::class, $bundle->getContainerExtension());
     }
 }
