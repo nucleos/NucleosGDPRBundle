@@ -11,11 +11,11 @@ namespace Core23\GDPRBundle\Tests\Block\Service;
 
 use Core23\GDPRBundle\Block\Service\GDPRInformationBlockService;
 use PHPUnit\Framework\MockObject\MockObject;
-use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\BlockBundle\Block\BlockContext;
+use Sonata\BlockBundle\Form\Mapper\FormMapper;
 use Sonata\BlockBundle\Model\Block;
 use Sonata\BlockBundle\Model\BlockInterface;
-use Sonata\BlockBundle\Test\AbstractBlockServiceTestCase;
+use Sonata\BlockBundle\Test\BlockServiceTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -96,11 +96,11 @@ final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
         static::assertTrue($response->isEmpty());
     }
 
-    public function testGetBlockMetadata(): void
+    public function testGetMetadata(): void
     {
         $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
 
-        $metadata = $blockService->getBlockMetadata('description');
+        $metadata = $blockService->getMetadata();
 
         static::assertSame('block.service', $metadata->getTitle());
         static::assertSame('description', $metadata->getDescription());
@@ -112,7 +112,7 @@ final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
         ], $metadata->getOptions());
     }
 
-    public function testBuildEditForm(): void
+    public function testConfigureEditForm(): void
     {
         $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
 
@@ -121,6 +121,6 @@ final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
         $formMapper = $this->createMock(FormMapper::class);
         $formMapper->expects(static::once())->method('add');
 
-        $blockService->buildEditForm($formMapper, $block);
+        $blockService->configureEditForm($formMapper, $block);
     }
 }
