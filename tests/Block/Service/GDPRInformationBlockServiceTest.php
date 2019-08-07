@@ -19,7 +19,7 @@ use Sonata\BlockBundle\Test\BlockServiceTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
+final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 {
     /**
      * @var MockObject|RequestStack
@@ -73,7 +73,7 @@ final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
         static::assertSame('@Core23GDPR/Block/block_gdpr.html.twig', $this->templating->view);
 
         static::assertSame($blockContext, $this->templating->parameters['context']);
-        static::assertInternalType('array', $this->templating->parameters['settings']);
+        static::assertIsArray($this->templating->parameters['settings']);
         static::assertInstanceOf(BlockInterface::class, $this->templating->parameters['block']);
     }
 
@@ -103,7 +103,6 @@ final class GDPRInformationBlockServiceTest extends AbstractBlockServiceTestCase
         $metadata = $blockService->getMetadata();
 
         static::assertSame('block.service', $metadata->getTitle());
-        static::assertSame('description', $metadata->getDescription());
         static::assertNotNull($metadata->getImage());
         static::assertStringStartsWith('data:image/png;base64,', $metadata->getImage() ?? '');
         static::assertSame('Core23GDPRBundle', $metadata->getDomain());
