@@ -45,7 +45,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
     public function testDefaultSettings(): void
     {
-        $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
         $blockContext = $this->getBlockContext($blockService);
 
         $this->assertSettings([
@@ -67,7 +67,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
             'position'        => 'block',
         ]);
 
-        $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
         $blockService->execute($blockContext);
 
         static::assertSame('@Core23GDPR/Block/block_gdpr.html.twig', $this->templating->view);
@@ -90,7 +90,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
             'position'        => 'block',
         ]);
 
-        $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
         $response     = $blockService->execute($blockContext);
 
         static::assertTrue($response->isEmpty());
@@ -98,11 +98,11 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
     public function testGetMetadata(): void
     {
-        $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
 
         $metadata = $blockService->getMetadata();
 
-        static::assertSame('block.service', $metadata->getTitle());
+        static::assertSame('core23_gdpr.block.information', $metadata->getTitle());
         static::assertNotNull($metadata->getImage());
         static::assertStringStartsWith('data:image/png;base64,', $metadata->getImage() ?? '');
         static::assertSame('Core23GDPRBundle', $metadata->getDomain());
@@ -113,7 +113,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
     public function testConfigureEditForm(): void
     {
-        $blockService = new GDPRInformationBlockService('block.service', $this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
 
         $block = new Block();
 
