@@ -37,9 +37,9 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
      */
     private $request;
 
-    public function __construct(string $name, EngineInterface $templating, RequestStack $request)
+    public function __construct(EngineInterface $templating, RequestStack $request)
     {
-        parent::__construct($name, $templating);
+        parent::__construct($templating);
 
         $this->request = $request;
     }
@@ -106,9 +106,14 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
 
     public function getMetadata(): MetadataInterface
     {
-        return new Metadata($this->getName(), null, null, 'Core23GDPRBundle', [
+        return new Metadata('core23_gdpr.block.information', null, null, 'Core23GDPRBundle', [
             'class' => 'fa fa-balance-scale',
         ]);
+    }
+
+    public function getName(): string
+    {
+        return $this->getMetadata()->getTitle();
     }
 
     private function hasGdprCookie(): bool
