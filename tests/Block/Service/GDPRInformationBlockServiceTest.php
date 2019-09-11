@@ -103,8 +103,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
         $metadata = $blockService->getMetadata();
 
         static::assertSame('core23_gdpr.block.information', $metadata->getTitle());
-        static::assertNotNull($metadata->getImage());
-        static::assertStringStartsWith('data:image/png;base64,', $metadata->getImage() ?? '');
+        static::assertNull($metadata->getImage());
         static::assertSame('Core23GDPRBundle', $metadata->getDomain());
         static::assertSame([
             'class' => 'fa fa-balance-scale',
