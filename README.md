@@ -41,18 +41,6 @@ return [
 It is recommended to use [webpack](https://webpack.js.org/) / [webpack-encore](https://github.com/symfony/webpack-encore) 
 to include the `GdprPopup.js` and `GdprPopup.css` file in your page. These files are located in the `assets` folder.
 
-### Configure the Bundle
-
-Add the block to the `sonata_block` configuration if necessary:
-
-```yaml
-# config/packages/sonata_block.yaml
-
-sonata_block:
-    blocks:
-        core23_gdpr.block.information: ~
-```
-
 ## Usage
 
 ```twig
