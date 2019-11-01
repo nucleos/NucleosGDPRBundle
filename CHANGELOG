@@ -1,3 +1,27 @@
+01/11/2019 22:41  1.1.0  Removed admin bundle dependency
+5f8fb70 [BUILD] Simplify rmt config
+832e804 [MINOR] Use latest block bundle for auto-registration of blocks
+de10fda [MINOR] Removed admin bundle dependency
+bbecada [BUILD] Remove nightly build from Travis
+d9cf43a [BUILD] Fixed wrong branch alias
+4577323 [BUILD] Added project specific phpstan settings
+a325f79 [MINOR] Removed deprecated name argument from block constructor
+783b4aa [TEST] Fixed deprecations in tests
+c32868e [MINOR] Use new block signatures
+f9fb748 [DOCS] Updated README
+cba5ffa [PATCH] Use latest block bundle for PHPUnit 8 support
+4875c44 [BUILD] Use phpunit 8
+7b9f946 [TEST] Added return types
+b226643 [TEST] Fixed phpstan findings
+aacb5a1 [PATCH] Use more precise null and type checks
+4905c5a [BUILD] Remove include from phpstan config
+d772c3f [BUILD] Added more strict phpstan rules
+95001bb [PATCH] Removed superfluous PHPDoc
+2a625df [PATCH] Updated CS config
+3cf76eb [BUILD] Added kodiak config
+27bb055 [BUILD] Include phpstan-prophecy extension
+ac3f776 [BUILD] Removed superfluous phpdoc
+d0db8a3 [BUILD] Added more phpstan checks
 11/06/2019 19:22  1.0.0  First stable
 6c7fddf [BUILD] Replaced deprecated "weak_vendors" option
 f66853f Added GitHub sponsoring information
