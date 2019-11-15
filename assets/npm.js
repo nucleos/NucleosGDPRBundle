@@ -1,1 +1,3 @@
-import './js/GdprPopup';
+import GdprPopup from './js/GdprPopup';
+
+export default GdprPopup
