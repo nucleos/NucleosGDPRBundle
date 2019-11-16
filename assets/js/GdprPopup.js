@@ -3,13 +3,21 @@ import '../css/GdprPopup.css';
 
 export default class GdprPopup {
   /**
-   * @param {Element} element
+   * @param {Element|string} element
    * @param {Object=} options
    *
    * @constructor
    */
   constructor(element, options) {
-    this.element = element;
+    if (typeof element === 'string') {
+      this.element = document.querySelector(element);
+    } else {
+      this.element = element;
+    }
+
+    if (!this.element) {
+      return;
+    }
 
     const defaultOptions = {
       cookieName: 'GDPR_COOKIE_LAW_CONSENT',
@@ -24,21 +32,25 @@ export default class GdprPopup {
       return;
     }
 
-    element.querySelector('.gdprpopup-button-confirm').addEventListener('click', () => {
-      this.setUserAcceptsCookies(true);
-      this.removeContainer();
-      return false;
-    });
-
-    element.querySelector('.gdprpopup-closebutton').addEventListener('click', () => {
-      this.removeContainer();
-      return false;
-    });
+    this.bindListeners();
 
     // In case it's alright to just display the message once
     if (this.options.autoAcceptCookiePolicy) {
       this.setUserAcceptsCookies(true);
     }
+  }
+
+  bindListeners() {
+    this.element.querySelector('.gdprpopup-button-confirm').addEventListener('click', () => {
+      this.setUserAcceptsCookies(true);
+      this.removeContainer();
+      return false;
+    });
+
+    this.element.querySelector('.gdprpopup-closebutton').addEventListener('click', () => {
+      this.removeContainer();
+      return false;
+    });
   }
 
   // Storing the consent in a cookie
