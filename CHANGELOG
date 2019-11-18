@@ -1,3 +1,6 @@
+18/11/2019 21:43  1.2.0  Add support for string selector in javascript
+2559c73 [MINOR] Add support for string selector in javascript
+b66eb7a [PATCH] Export js modules
 01/11/2019 22:41  1.1.0  Removed admin bundle dependency
 5f8fb70 [BUILD] Simplify rmt config
 832e804 [MINOR] Use latest block bundle for auto-registration of blocks
