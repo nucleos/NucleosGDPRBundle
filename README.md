@@ -8,10 +8,8 @@ GDPRBundle
 [![Monthly Downloads](https://poser.pugx.org/core23/gdpr-bundle/d/monthly)](https://packagist.org/packages/core23/gdpr-bundle)
 [![Daily Downloads](https://poser.pugx.org/core23/gdpr-bundle/d/daily)](https://packagist.org/packages/core23/gdpr-bundle)
 
-[![Build Status](https://travis-ci.org/core23/GDPRBundle.svg)](https://travis-ci.org/core23/GDPRBundle)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/GDPRBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/core23/GDPRBundle)
-[![Code Climate](https://codeclimate.com/github/core23/GDPRBundle/badges/gpa.svg)](https://codeclimate.com/github/core23/GDPRBundle)
-[![Coverage Status](https://coveralls.io/repos/core23/GDPRBundle/badge.svg)](https://coveralls.io/r/core23/GDPRBundle)
+[![Continuous Integration](https://github.com/core23/GDPRBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/core23/GDPRBundle/actions)
+[![Code Coverage](https://codecov.io/gh/core23/GDPRBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/core23/GDPRBundle)
 
 This bundle provides a GDPR conform cookie information inside the sonata-project.
 
@@ -38,7 +36,7 @@ return [
 
 ### Assets
 
-It is recommended to use [webpack](https://webpack.js.org/) / [webpack-encore](https://github.com/symfony/webpack-encore) 
+It is recommended to use [webpack](https://webpack.js.org/) / [webpack-encore](https://github.com/symfony/webpack-encore)
 to include the `GdprPopup.js` and `GdprPopup.css` file in your page. These files are located in the `assets` folder.
 
 ## Usage
