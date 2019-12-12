@@ -8,6 +8,7 @@
     "dsgvo",
     "cookie",
     "sonata",
+    "sonata-block",
     "block",
     "widget",
     "bundle"
