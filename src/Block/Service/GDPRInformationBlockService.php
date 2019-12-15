@@ -20,13 +20,13 @@ use Sonata\BlockBundle\Meta\MetadataInterface;
 use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\Form\Type\ImmutableArrayType;
 use Sonata\Form\Validator\ErrorElement;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Twig\Environment;
 
 final class GDPRInformationBlockService extends AbstractBlockService implements EditableBlockService
 {
@@ -37,14 +37,14 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
      */
     private $request;
 
-    public function __construct(EngineInterface $templating, RequestStack $request)
+    public function __construct(Environment $twig, RequestStack $request)
     {
-        parent::__construct($templating);
+        parent::__construct($twig);
 
         $this->request = $request;
     }
 
-    public function execute(BlockContextInterface $blockContext, Response $response = null)
+    public function execute(BlockContextInterface $blockContext, ?Response $response = null): Response
     {
         if ($this->hasGdprCookie()) {
             return new Response('', Response::HTTP_NO_CONTENT);
