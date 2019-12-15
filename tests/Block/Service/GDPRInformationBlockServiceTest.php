@@ -16,10 +16,10 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Sonata\BlockBundle\Block\BlockContext;
 use Sonata\BlockBundle\Form\Mapper\FormMapper;
 use Sonata\BlockBundle\Model\Block;
-use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\BlockBundle\Test\BlockServiceTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Response;
 
 final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 {
@@ -47,7 +47,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
     public function testDefaultSettings(): void
     {
-        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->twig, $this->requestStack);
         $blockContext = $this->getBlockContext($blockService);
 
         $this->assertSettings([
@@ -69,14 +69,24 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
             'position'        => 'block',
         ]);
 
-        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
-        $blockService->execute($blockContext);
+        $response = new Response();
 
-        static::assertSame('@Core23GDPR/Block/block_gdpr.html.twig', $this->templating->view);
+        $this->twig->expects(static::once())->method('render')
+            ->with(
+                '@Core23GDPR/Block/block_gdpr.html.twig',
+                [
+                    'context'    => $blockContext,
+                    'settings'   => $blockContext->getSettings(),
+                    'block'      => $blockContext->getBlock(),
+                ]
+            )
+            ->willReturn('TWIG_CONTENT')
+        ;
 
-        static::assertSame($blockContext, $this->templating->parameters['context']);
-        static::assertIsArray($this->templating->parameters['settings']);
-        static::assertInstanceOf(BlockInterface::class, $this->templating->parameters['block']);
+        $blockService = new GDPRInformationBlockService($this->twig, $this->requestStack);
+
+        static::assertSame($response, $blockService->execute($blockContext, $response));
+        static::assertSame('TWIG_CONTENT', $response->getContent());
     }
 
     public function testExecuteWithExistingCookie(): void
@@ -92,7 +102,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
             'position'        => 'block',
         ]);
 
-        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->twig, $this->requestStack);
         $response     = $blockService->execute($blockContext);
 
         static::assertTrue($response->isEmpty());
@@ -100,7 +110,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
     public function testGetMetadata(): void
     {
-        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->twig, $this->requestStack);
 
         $metadata = $blockService->getMetadata();
 
@@ -114,7 +124,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
     public function testConfigureEditForm(): void
     {
-        $blockService = new GDPRInformationBlockService($this->templating, $this->requestStack);
+        $blockService = new GDPRInformationBlockService($this->twig, $this->requestStack);
 
         $block = new Block();
 
