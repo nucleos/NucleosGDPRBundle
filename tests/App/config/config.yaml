@@ -1,0 +1,6 @@
+framework:
+    secret: secret
+
+twig:
+    paths:
+        - '%kernel.project_dir%/templates'

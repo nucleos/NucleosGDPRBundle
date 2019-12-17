@@ -9,8 +9,4 @@ parameters:
         - vendor-bin/test/vendor/autoload.php
 
     ignoreErrors:
-        -
-            message: "#^Call to an undefined method Twig\\\\Environment::expects\\(\\)\\.$#"
-            count: 1
-            path: tests/Block/Service/GDPRInformationBlockServiceTest.php
 
