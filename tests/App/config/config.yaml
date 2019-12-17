@@ -4,3 +4,13 @@ framework:
 twig:
     paths:
         - '%kernel.project_dir%/templates'
+
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Core23\GDPRBundle\Tests\App\Controller\TwigTestController:
+        tags:
+            - controller.service_arguments
