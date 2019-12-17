@@ -9,4 +9,17 @@ parameters:
         - vendor-bin/test/vendor/autoload.php
 
     ignoreErrors:
+        -
+            message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
+            count: 1
+            path: tests/Block/Service/GDPRInformationBlockServiceIntegrationTest.php
 
+        -
+            message: "#^Call to method request\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+            count: 1
+            path: tests/Block/Service/GDPRInformationBlockServiceIntegrationTest.php
+
+        -
+            message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+            count: 1
+            path: tests/Block/Service/GDPRInformationBlockServiceIntegrationTest.php
