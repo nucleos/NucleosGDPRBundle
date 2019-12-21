@@ -1,3 +1,6 @@
+includes:
+    - phpstan-baseline.neon
+
 parameters:
     level: max
 
@@ -8,18 +11,5 @@ parameters:
     autoload_files:
         - vendor-bin/test/vendor/autoload.php
 
-    ignoreErrors:
-        -
-            message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
-            count: 1
-            path: tests/Block/Service/GDPRInformationBlockServiceIntegrationTest.php
-
-        -
-            message: "#^Call to method request\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
-            count: 1
-            path: tests/Block/Service/GDPRInformationBlockServiceIntegrationTest.php
-
-        -
-            message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
-            count: 1
-            path: tests/Block/Service/GDPRInformationBlockServiceIntegrationTest.php
+    excludes_analyse:
+        - tests/bootstrap.php
