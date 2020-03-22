@@ -41,14 +41,20 @@ export default class GdprPopup {
   }
 
   bindListeners() {
-    this.element.querySelector('.gdprpopup-button-confirm').addEventListener('click', () => {
+    this.element.querySelector('.gdprpopup-button-confirm').addEventListener('click', (e) => {
+      e.preventDefault();
+
       this.setUserAcceptsCookies(true);
       this.removeContainer();
+
       return false;
     });
 
-    this.element.querySelector('.gdprpopup-closebutton').addEventListener('click', () => {
+    this.element.querySelector('.gdprpopup-closebutton').addEventListener('click', (e) => {
+      e.preventDefault();
+
       this.removeContainer();
+
       return false;
     });
   }
