@@ -1,3 +1,9 @@
+# 1.3.1
+
+## 🐛 Bug Fixes
+
+- Fix consuming JavaScript event @core23 (#42)
+
 # 1.3.0
 
 ## Changes
