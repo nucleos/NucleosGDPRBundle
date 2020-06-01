@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\GDPRBundle\DependencyInjection;
 
+use Core23\GDPRBundle\EventListener\KernelEventSubscriber;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
@@ -23,7 +24,18 @@ final class Core23GDPRExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
+        $configuration = new Configuration();
+        $config        = $this->processConfiguration($configuration, $configs);
+
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('block.xml');
+
+        if (isset($config['block_cookies'])) {
+            $loader->load('listener.xml');
+
+            $container->getDefinition(KernelEventSubscriber::class)
+                ->replaceArgument(0, $config['block_cookies']['whitelist'])
+            ;
+        }
     }
 }

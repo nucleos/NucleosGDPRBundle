@@ -34,6 +34,30 @@ return [
 ];
 ```
 
+### Block cookies
+
+By default all cookies are kept, also the cookie consent was not set.
+To block all (symfony) cookies, you can set the following config.
+
+```yaml
+# config/packages/core23_gdpr.yaml
+
+core23_gdpr:
+    block_cookies: null
+```
+
+You can whitelist cookies by name or via regex:
+
+```yaml
+# config/packages/core23_gdpr.yaml
+
+core23_gdpr:
+    block_cookies:
+        whitelist:
+          - PHPSESSID
+          - ADMIN_.*
+```
+
 ### Assets
 
 It is recommended to use [webpack](https://webpack.js.org/) / [webpack-encore](https://github.com/symfony/webpack-encore)
