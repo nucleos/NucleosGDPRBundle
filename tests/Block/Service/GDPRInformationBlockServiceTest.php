@@ -91,7 +91,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
     public function testExecuteWithExistingCookie(): void
     {
-        $this->request->cookies->set(GDPRInformationBlockService::COOKIE_NAME, true);
+        $this->request->cookies->set(GDPRInformationBlockService::COOKIE_NAME, 'true');
 
         $block = new Block();
 
