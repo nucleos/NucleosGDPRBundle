@@ -1,3 +1,15 @@
+# 1.4.0
+
+## Changes
+
+## 🚀 Features
+
+- Block all cookies if not consent @core23 (#45)
+
+## 📦 Dependencies
+
+- Bump symfony versions @core23 (#47)
+
 # 1.3.1
 
 ## 🐛 Bug Fixes
