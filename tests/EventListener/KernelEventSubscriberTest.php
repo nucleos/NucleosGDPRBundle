@@ -20,10 +20,10 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 final class KernelEventSubscriberTest extends TestCase
 {
-    private const SOME_COOKIE_NAME             = 'SOME_COOKIE';
-    private const WHITELIST_COOKIE_NAME        = 'WHITELIST_COOKIE';
-    private const WHITELIST_REGEX              = 'ADMIN_.*';
-    private const WHITELIST_REGED_EXAMPLE      = 'ADMIN_TEST';
+    private const SOME_COOKIE_NAME    = 'SOME_COOKIE';
+    private const KEEP_COOKIE_NAME    = 'KEEP_COOKIE';
+    private const KEEP_REGEX          = 'ADMIN_.*';
+    private const KEEP_REGED_EXAMPLE  = 'ADMIN_TEST';
 
     /**
      * @var KernelEventSubscriber
@@ -33,8 +33,8 @@ final class KernelEventSubscriberTest extends TestCase
     protected function setUp(): void
     {
         $this->subscriber = new KernelEventSubscriber([
-            self::WHITELIST_COOKIE_NAME,
-            self::WHITELIST_REGEX,
+            self::KEEP_COOKIE_NAME,
+            self::KEEP_REGEX,
         ]);
     }
 
@@ -42,8 +42,8 @@ final class KernelEventSubscriberTest extends TestCase
     {
         $response = new Response();
         $response->headers->setCookie(Cookie::create(self::SOME_COOKIE_NAME));
-        $response->headers->setCookie(Cookie::create(self::WHITELIST_COOKIE_NAME));
-        $response->headers->setCookie(Cookie::create(self::WHITELIST_REGED_EXAMPLE));
+        $response->headers->setCookie(Cookie::create(self::KEEP_COOKIE_NAME));
+        $response->headers->setCookie(Cookie::create(self::KEEP_REGED_EXAMPLE));
         $response->headers->setCookie(Cookie::create(GDPRInformationBlockService::COOKIE_NAME));
 
         $event = new ResponseEvent(
@@ -57,8 +57,8 @@ final class KernelEventSubscriberTest extends TestCase
 
         static::assertCount(4, $response->headers->getCookies());
         $this->assertHasCookie(self::SOME_COOKIE_NAME, $response);
-        $this->assertHasCookie(self::WHITELIST_COOKIE_NAME, $response);
-        $this->assertHasCookie(self::WHITELIST_REGED_EXAMPLE, $response);
+        $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
+        $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
         $this->assertHasCookie(GDPRInformationBlockService::COOKIE_NAME, $response);
     }
 
@@ -66,8 +66,8 @@ final class KernelEventSubscriberTest extends TestCase
     {
         $response = new Response();
         $response->headers->setCookie(Cookie::create(self::SOME_COOKIE_NAME));
-        $response->headers->setCookie(Cookie::create(self::WHITELIST_COOKIE_NAME));
-        $response->headers->setCookie(Cookie::create(self::WHITELIST_REGED_EXAMPLE));
+        $response->headers->setCookie(Cookie::create(self::KEEP_COOKIE_NAME));
+        $response->headers->setCookie(Cookie::create(self::KEEP_REGED_EXAMPLE));
 
         $event = new ResponseEvent(
             $this->createStub(HttpKernelInterface::class),
@@ -79,8 +79,8 @@ final class KernelEventSubscriberTest extends TestCase
         $this->subscriber->cleanCookies($event);
 
         static::assertCount(2, $response->headers->getCookies());
-        $this->assertHasCookie(self::WHITELIST_COOKIE_NAME, $response);
-        $this->assertHasCookie(self::WHITELIST_REGED_EXAMPLE, $response);
+        $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
+        $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
     }
 
     private function assertHasCookie(string $cookieName, Response $response): void
