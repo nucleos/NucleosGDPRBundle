@@ -46,14 +46,14 @@ core23_gdpr:
     block_cookies: null
 ```
 
-You can whitelist cookies by name or via regex:
+You can define a list of cookies that are kept:
 
 ```yaml
 # config/packages/core23_gdpr.yaml
 
 core23_gdpr:
     block_cookies:
-        whitelist:
+        keep:
           - PHPSESSID
           - ADMIN_.*
 ```
