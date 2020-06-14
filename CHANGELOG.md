@@ -1,3 +1,39 @@
+# 2.0.0
+
+## Changed
+
+* Renamed namespace `Core23\GDPRBundle` to `Nucleos\GDPRBundle` after move to [@nucleos]
+
+  Run
+
+  ```
+  $ composer remove core23/gdpr-bundle
+  ```
+
+  and
+
+  ```
+  $ composer require nucleos/gdpr-bundle
+  ```
+
+  to update.
+
+  Run
+
+  ```
+  $ find . -type f -exec sed -i '.bak' 's/Core23\\GDPRBundle/Nucleos\\GDPRBundle/g' {} \;
+  ```
+
+  to replace occurrences of `Core23\GDPRBundle` with `Nucleos\GDPRBundle`.
+
+  Run
+
+  ```
+  $ find -type f -name '*.bak' -delete
+  ```
+
+  to delete backup files created in the previous step.
+
 # 1.5.0
 
 ## Changes

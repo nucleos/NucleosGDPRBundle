@@ -3,21 +3,23 @@
 declare(strict_types=1);
 
 /*
+ * This file is part of the NucleosGDPRBundle package.
+ *
  * (c) Christian Gripp <mail@core23.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Core23\GDPRBundle\DependencyInjection;
+namespace Nucleos\GDPRBundle\DependencyInjection;
 
-use Core23\GDPRBundle\EventListener\KernelEventSubscriber;
+use Nucleos\GDPRBundle\EventListener\KernelEventSubscriber;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-final class Core23GDPRExtension extends Extension
+final class NucleosGDPRExtension extends Extension
 {
     /**
      * @param array<mixed> $configs

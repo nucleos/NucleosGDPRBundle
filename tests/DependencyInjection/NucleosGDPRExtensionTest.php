@@ -3,25 +3,27 @@
 declare(strict_types=1);
 
 /*
+ * This file is part of the NucleosGDPRBundle package.
+ *
  * (c) Christian Gripp <mail@core23.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Core23\GDPRBundle\Tests\DependencyInjection;
+namespace Nucleos\GDPRBundle\Tests\DependencyInjection;
 
-use Core23\GDPRBundle\DependencyInjection\Core23GDPRExtension;
-use Core23\GDPRBundle\EventListener\KernelEventSubscriber;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
+use Nucleos\GDPRBundle\DependencyInjection\NucleosGDPRExtension;
+use Nucleos\GDPRBundle\EventListener\KernelEventSubscriber;
 
-final class Core23GDPRExtensionTest extends AbstractExtensionTestCase
+final class NucleosGDPRExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
     {
         $this->load();
 
-        $this->assertContainerBuilderHasService('core23_gdpr.block.information');
+        $this->assertContainerBuilderHasService('nucleos_gdpr.block.information');
         $this->assertContainerBuilderNotHasService(KernelEventSubscriber::class);
     }
 
@@ -41,7 +43,7 @@ final class Core23GDPRExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions(): array
     {
         return [
-            new Core23GDPRExtension(),
+            new NucleosGDPRExtension(),
         ];
     }
 }

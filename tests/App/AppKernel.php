@@ -3,16 +3,18 @@
 declare(strict_types=1);
 
 /*
+ * This file is part of the NucleosGDPRBundle package.
+ *
  * (c) Christian Gripp <mail@core23.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Core23\GDPRBundle\Tests\App;
+namespace Nucleos\GDPRBundle\Tests\App;
 
-use Core23\GDPRBundle\Core23GDPRBundle;
-use Core23\GDPRBundle\Tests\App\Controller\TwigTestController;
+use Nucleos\GDPRBundle\NucleosGDPRBundle;
+use Nucleos\GDPRBundle\Tests\App\Controller\TwigTestController;
 use Sonata\BlockBundle\SonataBlockBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
@@ -37,7 +39,7 @@ final class AppKernel extends Kernel
             new FrameworkBundle(),
             new TwigBundle(),
             new SonataBlockBundle(),
-            new Core23GDPRBundle(),
+            new NucleosGDPRBundle(),
         ];
     }
 

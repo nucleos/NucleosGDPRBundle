@@ -3,15 +3,17 @@
 declare(strict_types=1);
 
 /*
+ * This file is part of the NucleosGDPRBundle package.
+ *
  * (c) Christian Gripp <mail@core23.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Core23\GDPRBundle\Tests\Block\Service;
+namespace Nucleos\GDPRBundle\Tests\Block\Service;
 
-use Core23\GDPRBundle\Block\Service\GDPRInformationBlockService;
+use Nucleos\GDPRBundle\Block\Service\GDPRInformationBlockService;
 use PHPUnit\Framework\MockObject\MockObject;
 use Sonata\BlockBundle\Block\BlockContext;
 use Sonata\BlockBundle\Form\Mapper\FormMapper;
@@ -53,7 +55,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
         $this->assertSettings([
             'text'            => null,
             'url'             => 'https://gdpr-info.eu/',
-            'template'        => '@Core23GDPR/Block/block_gdpr.html.twig',
+            'template'        => '@NucleosGDPR/Block/block_gdpr.html.twig',
             'position'        => 'block',
         ], $blockContext);
     }
@@ -65,7 +67,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
         $blockContext = new BlockContext($block, [
             'text'            => null,
             'url'             => 'https://gdpr-info.eu/',
-            'template'        => '@Core23GDPR/Block/block_gdpr.html.twig',
+            'template'        => '@NucleosGDPR/Block/block_gdpr.html.twig',
             'position'        => 'block',
         ]);
 
@@ -73,7 +75,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
         $this->twig->expects(static::once())->method('render')
             ->with(
-                '@Core23GDPR/Block/block_gdpr.html.twig',
+                '@NucleosGDPR/Block/block_gdpr.html.twig',
                 [
                     'context'    => $blockContext,
                     'settings'   => $blockContext->getSettings(),
@@ -98,7 +100,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
         $blockContext = new BlockContext($block, [
             'text'            => null,
             'url'             => 'https://gdpr-info.eu/',
-            'template'        => '@Core23GDPR/Block/block_gdpr.html.twig',
+            'template'        => '@NucleosGDPR/Block/block_gdpr.html.twig',
             'position'        => 'block',
         ]);
 
@@ -114,9 +116,9 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
         $metadata = $blockService->getMetadata();
 
-        static::assertSame('core23_gdpr.block.information', $metadata->getTitle());
+        static::assertSame('nucleos_gdpr.block.information', $metadata->getTitle());
         static::assertNull($metadata->getImage());
-        static::assertSame('Core23GDPRBundle', $metadata->getDomain());
+        static::assertSame('NucleosGDPRBundle', $metadata->getDomain());
         static::assertSame([
             'class' => 'fa fa-balance-scale',
         ], $metadata->getOptions());
