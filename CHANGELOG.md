@@ -1,3 +1,9 @@
+# 1.5.0
+
+## Changes
+
+- Remove oppressive language @core23 (#48)
+
 # 1.4.0
 
 ## Changes
