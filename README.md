@@ -9,7 +9,7 @@ NucleosGDPRBundle
 [![Daily Downloads](https://poser.pugx.org/nucleos/gdpr-bundle/d/daily)](https://packagist.org/packages/nucleos/gdpr-bundle)
 
 [![Continuous Integration](https://github.com/nucleos/NucleosGDPRBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/NucleosGDPRBundle/actions)
-[![Code Coverage](https://codecov.io/gh/nucleos/NucleosGDPRBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosGDPRBundle)
+[![Code Coverage](https://codecov.io/gh/nucleos/NucleosGDPRBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosGDPRBundle)
 
 This bundle provides a GDPR conform cookie information inside the sonata-project.
 

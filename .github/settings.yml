@@ -9,7 +9,7 @@ repository:
   topics: symfony, symfony-bundle, bundle, php, gdpr, dsgvo, sonata, sonata-block
 
 branches:
-  - name: master
+  - name: main
     protection:
       enforce_admins: false
       required_status_checks:
