@@ -1,5 +1,5 @@
 {
-    "name": "core23/gdpr-bundle",
+    "name": "nucleos/gdpr-bundle",
     "type": "symfony-bundle",
     "description": "This bundle provides a GDPR conform cookie information inside the sonata-project.",
     "keywords": [
@@ -13,7 +13,7 @@
         "widget",
         "bundle"
     ],
-    "homepage": "https://core23.de",
+    "homepage": "https://nucleos.rocks",
     "license": "MIT",
     "authors": [
         {
@@ -47,17 +47,17 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.x-dev"
+            "dev-master": "2.x-dev"
         }
     },
     "autoload": {
         "psr-4": {
-            "Core23\\GDPRBundle\\": "src/"
+            "Nucleos\\GDPRBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Core23\\GDPRBundle\\Tests\\": "tests/"
+            "Nucleos\\GDPRBundle\\Tests\\": "tests/"
         }
     },
     "scripts": {

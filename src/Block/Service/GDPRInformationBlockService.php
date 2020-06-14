@@ -3,13 +3,15 @@
 declare(strict_types=1);
 
 /*
+ * This file is part of the NucleosGDPRBundle package.
+ *
  * (c) Christian Gripp <mail@core23.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Core23\GDPRBundle\Block\Service;
+namespace Nucleos\GDPRBundle\Block\Service;
 
 use Sonata\BlockBundle\Block\BlockContextInterface;
 use Sonata\BlockBundle\Block\Service\AbstractBlockService;
@@ -86,7 +88,7 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
                     ],
                 ]],
             ],
-            'translation_domain' => 'Core23GDPRBundle',
+            'translation_domain' => 'NucleosGDPRBundle',
         ]);
     }
 
@@ -95,7 +97,7 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
         $resolver->setDefaults([
             'text'            => null,
             'url'             => 'https://gdpr-info.eu/',
-            'template'        => '@Core23GDPR/Block/block_gdpr.html.twig',
+            'template'        => '@NucleosGDPR/Block/block_gdpr.html.twig',
             'position'        => 'block',
         ]);
     }
@@ -106,7 +108,7 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
 
     public function getMetadata(): MetadataInterface
     {
-        return new Metadata('core23_gdpr.block.information', null, null, 'Core23GDPRBundle', [
+        return new Metadata('nucleos_gdpr.block.information', null, null, 'NucleosGDPRBundle', [
             'class' => 'fa fa-balance-scale',
         ]);
     }

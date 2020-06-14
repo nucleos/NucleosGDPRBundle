@@ -1,15 +1,17 @@
 <?php
 
 /*
+ * This file is part of the NucleosGDPRBundle package.
+ *
  * (c) Christian Gripp <mail@core23.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Core23\GDPRBundle\EventListener;
+namespace Nucleos\GDPRBundle\EventListener;
 
-use Core23\GDPRBundle\Block\Service\GDPRInformationBlockService;
+use Nucleos\GDPRBundle\Block\Service\GDPRInformationBlockService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;

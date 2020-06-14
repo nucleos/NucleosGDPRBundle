@@ -3,13 +3,15 @@
 declare(strict_types=1);
 
 /*
+ * This file is part of the NucleosGDPRBundle package.
+ *
  * (c) Christian Gripp <mail@core23.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Core23\GDPRBundle\DependencyInjection;
+namespace Nucleos\GDPRBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -19,7 +21,7 @@ final class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('core23_gdpr');
+        $treeBuilder = new TreeBuilder('nucleos_gdpr');
 
         $rootNode = $treeBuilder->getRootNode();
 

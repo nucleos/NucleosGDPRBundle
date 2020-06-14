@@ -11,6 +11,6 @@ services:
         autowire: true
         autoconfigure: true
 
-    Core23\GDPRBundle\Tests\App\Controller\TwigTestController:
+    Nucleos\GDPRBundle\Tests\App\Controller\TwigTestController:
         tags:
             - controller.service_arguments
