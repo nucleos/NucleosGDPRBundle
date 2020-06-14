@@ -35,11 +35,6 @@ final class NucleosGDPRExtension extends Extension
         if (isset($config['block_cookies'])) {
             $loader->load('listener.xml');
 
-            if ([] !== $config['block_cookies']['whitelist']) {
-                $config['block_cookies']['keep'] = $config['block_cookies']['whitelist'];
-                unset($config['block_cookies']['whitelist']);
-            }
-
             $container->getDefinition(KernelEventSubscriber::class)
                 ->replaceArgument(0, $config['block_cookies']['keep'])
             ;

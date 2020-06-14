@@ -39,7 +39,6 @@ final class ConfigurationTest extends TestCase
 
         $expected = [
             'block_cookies' => [
-                'whitelist' => [],
                 'keep'      => ['PHPSESSID'],
             ],
         ];
@@ -60,7 +59,6 @@ final class ConfigurationTest extends TestCase
         $expected = [
             'block_cookies' => [
                 'keep'      => ['SOMEKEY', 'OTHERKEY'],
-                'whitelist' => [],
             ],
         ];
 
