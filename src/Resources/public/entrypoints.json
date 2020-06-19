@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "widget": {
+      "css": [
+        "/bundles/nucleosgdpr/widget.css"
+      ],
+      "js": [
+        "/bundles/nucleosgdpr/widget.js"
+      ]
+    }
+  }
+}
