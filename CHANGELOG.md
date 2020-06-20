@@ -1,3 +1,19 @@
+# 2.1.0
+
+## Changes
+
+## 🚀 Features
+
+- Add combined assets @core23 (#59)
+
+## 📦 Dependencies
+
+- Add support for sonata/block-bundle 3 @core23 (#66)
+- Bump @symfony/webpack-encore from 0.27.0 to 0.30.2 @dependabot (#63)
+- Bump eslint-loader from 2.2.1 to 4.0.2 @dependabot (#64)
+- Bump @babel/preset-env from 7.10.2 to 7.10.3 @dependabot (#62)
+- Bump @babel/core from 7.10.2 to 7.10.3 @dependabot (#65)
+
 # 2.0.0
 
 ## Changed
