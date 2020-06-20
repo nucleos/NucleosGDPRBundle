@@ -4,7 +4,7 @@ _extends: .github
 
 repository:
   name: NucleosGDPRBundle
-  description: This bundle provides a GDPR conform cookie information for symfony applications.
+  description: ⚖️ This bundle provides a GDPR conform cookie information for symfony applications.
   homepage: https://nucleos.rocks
   topics: symfony, symfony-bundle, bundle, gdpr, dsgvo, sonata, sonata-block, blocker
 
