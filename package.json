@@ -13,7 +13,7 @@
         "babel-loader": "^8.1.0",
         "eslint": "^7.3.1",
         "eslint-config-airbnb": "^18.1.0",
-        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-import": "^2.22.0",
         "eslint-loader": "^4.0.2",
         "eslint-watch": "^7.0.0",
         "node-sass": "^4.12.0",
