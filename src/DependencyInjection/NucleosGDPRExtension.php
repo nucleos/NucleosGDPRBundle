@@ -29,11 +29,11 @@ final class NucleosGDPRExtension extends Extension
         $configuration = new Configuration();
         $config        = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('block.xml');
+        $loader = new Loader\PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('block.php');
 
         if (isset($config['block_cookies'])) {
-            $loader->load('listener.xml');
+            $loader->load('listener.php');
 
             $container->getDefinition(KernelEventSubscriber::class)
                 ->replaceArgument(0, $config['block_cookies']['keep'])
