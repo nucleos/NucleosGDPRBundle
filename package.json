@@ -11,7 +11,7 @@
         "@symfony/webpack-encore": "^0.30.2",
         "babel-eslint": "^10.1.0",
         "babel-loader": "^8.1.0",
-        "eslint": "^7.4.0",
+        "eslint": "^7.5.0",
         "eslint-config-airbnb": "^18.1.0",
         "eslint-plugin-import": "^2.22.0",
         "eslint-loader": "^4.0.2",
