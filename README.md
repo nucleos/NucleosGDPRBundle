@@ -10,6 +10,7 @@ NucleosGDPRBundle
 
 [![Continuous Integration](https://github.com/nucleos/NucleosGDPRBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/NucleosGDPRBundle/actions)
 [![Code Coverage](https://codecov.io/gh/nucleos/NucleosGDPRBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosGDPRBundle)
+[![Type Coverage](https://shepherd.dev/github/nucleos/NucleosGDPRBundle/coverage.svg)](https://shepherd.dev/github/nucleos/NucleosGDPRBundle)
 
 This bundle provides a GDPR conform cookie information for symfony applications.
 
