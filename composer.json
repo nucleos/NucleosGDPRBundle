@@ -40,7 +40,7 @@
         "symfony/browser-kit": "^4.4 || ^5.0.4"
     },
     "suggest": {
-        "core23/shariff-bundle": "If you need a GDPR conform social media widget integration"
+        "nucleos/shariff-bundle": "If you need a GDPR conform social media widget integration"
     },
     "config": {
         "sort-packages": true
