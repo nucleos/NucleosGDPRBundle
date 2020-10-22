@@ -13,6 +13,7 @@ updates:
   - core23
   labels:
   - dependency
+
 - package-ecosystem: composer
   directory: "/vendor-bin/tools/"
   schedule:
@@ -22,18 +23,7 @@ updates:
   labels:
   - pedantic
   - automerge
-- package-ecosystem: "npm"
-  directory: "/"
-  schedule:
-    interval: daily
-    time: '04:00'
-  open-pull-requests-limit: 10
-  reviewers:
-  - core23
-  assignees:
-  - core23
-  labels:
-  - dependency
+
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
@@ -43,3 +33,20 @@ updates:
   labels:
   - pedantic
   - automerge
+
+- package-ecosystem: "npm"
+  directory: "/"
+  schedule:
+    interval: daily
+    time: '04:00'
+  open-pull-requests-limit: 10
+  allow:
+    - dependency-type: "development"
+  reviewers:
+  - core23
+  assignees:
+  - core23
+  labels:
+  - pedantic
+  - automerge
+
