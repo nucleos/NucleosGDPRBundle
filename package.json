@@ -16,7 +16,7 @@
         "eslint-plugin-import": "^2.22.1",
         "eslint-loader": "^4.0.2",
         "eslint-watch": "^7.0.0",
-        "node-sass": "^4.12.0",
+        "node-sass": "^5.0.0",
         "sass-loader": "^10.0.4",
         "size-limit": "^4.7.0"
     },
