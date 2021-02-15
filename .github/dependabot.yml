@@ -21,7 +21,6 @@ updates:
     time: '03:00'
   open-pull-requests-limit: 10
   labels:
-  - pedantic
   - automerge
 
 - package-ecosystem: github-actions
@@ -31,7 +30,6 @@ updates:
     time: '03:00'
   open-pull-requests-limit: 10
   labels:
-  - pedantic
   - automerge
 
 - package-ecosystem: "npm"
@@ -47,6 +45,5 @@ updates:
   assignees:
   - core23
   labels:
-  - pedantic
   - automerge
 
