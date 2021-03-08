@@ -57,6 +57,8 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
             'settings' => $blockContext->getSettings(),
             'block'    => $blockContext->getBlock(),
         ];
+        
+        \assert(null !== $blockContext->getTemplate());
 
         return $this->renderPrivateResponse($blockContext->getTemplate(), $parameters, $response);
     }
