@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Nucleos\GDPRBundle\Block\Service;
 
+use LogicException;
 use Sonata\BlockBundle\Block\BlockContextInterface;
 use Sonata\BlockBundle\Block\Service\AbstractBlockService;
 use Sonata\BlockBundle\Block\Service\EditableBlockService;
@@ -58,7 +59,9 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
             'block'    => $blockContext->getBlock(),
         ];
 
-        \assert(null !== $blockContext->getTemplate());
+        if (!\is_string($blockContext->getTemplate())) {
+            throw new LogicException('Cannot render block without template');
+        }
 
         return $this->renderPrivateResponse($blockContext->getTemplate(), $parameters, $response);
     }

@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Nucleos\GDPRBundle\Tests\Block\Service;
 
+use LogicException;
 use Nucleos\GDPRBundle\Block\Service\GDPRInformationBlockService;
 use PHPUnit\Framework\MockObject\MockObject;
 use Sonata\BlockBundle\Block\BlockContext;
@@ -89,6 +90,23 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
         static::assertSame($response, $blockService->execute($blockContext, $response));
         static::assertSame('TWIG_CONTENT', $response->getContent());
+    }
+
+    public function testExecuteWithNullTemplate(): void
+    {
+        $this->expectException(LogicException::class);
+        $this->expectExceptionMessage('Cannot render block without template');
+
+        $block = new Block();
+
+        $blockContext = new BlockContext($block, [
+            'template'    => null,
+        ]);
+
+        $response = new Response();
+
+        $blockService = new GDPRInformationBlockService($this->twig, $this->requestStack);
+        $blockService->execute($blockContext, $response);
     }
 
     public function testExecuteWithExistingCookie(): void
