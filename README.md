@@ -38,7 +38,7 @@ return [
 ### Block cookies
 
 By default all cookies are kept, also the cookie consent was not set.
-To block all (symfony) cookies, you can set the following config.
+To block all domain cookies, you can set the following config.
 
 ```yaml
 # config/packages/nucleos_gdpr.yaml
@@ -58,6 +58,20 @@ nucleos_gdpr:
           - PHPSESSID
           - ADMIN_.*
 ```
+
+
+### Google FLoC (Federated Learning of Cohorts)
+
+By default a `Permissions-Policy` header is added to every response to respect user privacy. You can enable Google FLoC tracking via the following configuration:
+
+```yaml
+# config/packages/nucleos_gdpr.yaml
+
+nucleos_gdpr:
+    privacy:
+        google_floc: true
+```
+
 
 ### Assets
 

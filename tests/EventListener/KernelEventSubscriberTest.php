@@ -27,17 +27,29 @@ final class KernelEventSubscriberTest extends TestCase
     private const KEEP_REGEX          = 'ADMIN_.*';
     private const KEEP_REGED_EXAMPLE  = 'ADMIN_TEST';
 
-    /**
-     * @var KernelEventSubscriber
-     */
-    private $subscriber;
-
-    protected function setUp(): void
+    public function testCleanCookiesWithDisabledOption(): void
     {
-        $this->subscriber = new KernelEventSubscriber([
-            self::KEEP_COOKIE_NAME,
-            self::KEEP_REGEX,
-        ]);
+        $response = new Response();
+        $response->headers->setCookie(Cookie::create(self::SOME_COOKIE_NAME));
+        $response->headers->setCookie(Cookie::create(self::KEEP_COOKIE_NAME));
+        $response->headers->setCookie(Cookie::create(self::KEEP_REGED_EXAMPLE));
+        $response->headers->setCookie(Cookie::create(GDPRInformationBlockService::COOKIE_NAME));
+
+        $event = new ResponseEvent(
+            $this->createStub(HttpKernelInterface::class),
+            $this->createStub(Request::class),
+            0,
+            $response
+        );
+
+        $subscriber = new KernelEventSubscriber(null);
+        $subscriber->cleanCookies($event);
+
+        static::assertCount(4, $response->headers->getCookies());
+        $this->assertHasCookie(self::SOME_COOKIE_NAME, $response);
+        $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
+        $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
+        $this->assertHasCookie(GDPRInformationBlockService::COOKIE_NAME, $response);
     }
 
     public function testCleanCookiesWithConsent(): void
@@ -55,7 +67,11 @@ final class KernelEventSubscriberTest extends TestCase
             $response
         );
 
-        $this->subscriber->cleanCookies($event);
+        $subscriber = new KernelEventSubscriber([
+            self::KEEP_COOKIE_NAME,
+            self::KEEP_REGEX,
+        ]);
+        $subscriber->cleanCookies($event);
 
         static::assertCount(4, $response->headers->getCookies());
         $this->assertHasCookie(self::SOME_COOKIE_NAME, $response);
@@ -78,11 +94,50 @@ final class KernelEventSubscriberTest extends TestCase
             $response
         );
 
-        $this->subscriber->cleanCookies($event);
+        $subscriber = new KernelEventSubscriber([
+            self::KEEP_COOKIE_NAME,
+            self::KEEP_REGEX,
+        ]);
+        $subscriber->cleanCookies($event);
 
         static::assertCount(2, $response->headers->getCookies());
         $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
+    }
+
+    public function testAddFLoCPolicy(): void
+    {
+        $response = new Response();
+
+        $event = new ResponseEvent(
+            $this->createStub(HttpKernelInterface::class),
+            $this->createStub(Request::class),
+            0,
+            $response
+        );
+
+        $subscriber = new KernelEventSubscriber(null, false);
+        $subscriber->addFLoCPolicy($event);
+
+        static::assertTrue($response->headers->has('Permissions-Policy'));
+        static::assertSame('interest-cohort=()', $response->headers->get('Permissions-Policy'));
+    }
+
+    public function testAddFLoCPolicyWithDisabledOption(): void
+    {
+        $response = new Response();
+
+        $event = new ResponseEvent(
+            $this->createStub(HttpKernelInterface::class),
+            $this->createStub(Request::class),
+            0,
+            $response
+        );
+
+        $subscriber = new KernelEventSubscriber(null, true);
+        $subscriber->addFLoCPolicy($event);
+
+        static::assertFalse($response->headers->has('Permissions-Policy'));
     }
 
     private function assertHasCookie(string $cookieName, Response $response): void

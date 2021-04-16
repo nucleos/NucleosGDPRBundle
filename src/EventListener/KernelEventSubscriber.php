@@ -20,27 +20,43 @@ use Symfony\Component\HttpKernel\KernelEvents;
 final class KernelEventSubscriber implements EventSubscriberInterface
 {
     /**
-     * @var string[]
+     * @var string[]|null
      */
     private $whitelist;
 
     /**
+     * @var bool
+     */
+    private $googleFLOC;
+
+    /**
      * @param string[] $whitelist
      */
-    public function __construct(array $whitelist = [])
+    public function __construct(?array $whitelist = [], bool $googleFLOC = false)
     {
-        $this->whitelist = $whitelist;
+        $this->whitelist  = $whitelist;
+        $this->googleFLOC = $googleFLOC;
     }
 
     public static function getSubscribedEvents(): array
     {
         return [
-            KernelEvents::RESPONSE => 'cleanCookies',
+            KernelEvents::RESPONSE => [
+                ['cleanCookies', 0],
+                ['addFLoCPolicy', 0],
+            ],
         ];
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     */
     public function cleanCookies(ResponseEvent $event): void
     {
+        if (null === $this->whitelist) {
+            return;
+        }
+
         $headers = $event->getResponse()->headers;
         $cookies = $headers->getCookies();
 
@@ -57,6 +73,16 @@ final class KernelEventSubscriber implements EventSubscriberInterface
         }
     }
 
+    public function addFLoCPolicy(ResponseEvent $event): void
+    {
+        if (true === $this->googleFLOC) {
+            return;
+        }
+
+        $response = $event->getResponse();
+        $response->headers->set('Permissions-Policy', 'interest-cohort=()');
+    }
+
     /**
      * @param Cookie[] $cookies
      */
@@ -71,8 +97,15 @@ final class KernelEventSubscriber implements EventSubscriberInterface
         return false;
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     */
     private function isWhitelisted(Cookie $cookie): bool
     {
+        if (null === $this->whitelist) {
+            return true;
+        }
+
         foreach ($this->whitelist as $name) {
             if ($cookie->getName() === $name || 1 === preg_match('#'.$name.'#', $cookie->getName())) {
                 return true;
