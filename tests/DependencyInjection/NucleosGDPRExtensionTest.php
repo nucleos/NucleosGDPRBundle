@@ -24,7 +24,10 @@ final class NucleosGDPRExtensionTest extends AbstractExtensionTestCase
         $this->load();
 
         $this->assertContainerBuilderHasService('nucleos_gdpr.block.information');
-        $this->assertContainerBuilderNotHasService(KernelEventSubscriber::class);
+        $this->assertContainerBuilderHasService(KernelEventSubscriber::class);
+
+        $this->assertContainerBuilderHasServiceDefinitionWithArgument(KernelEventSubscriber::class, 0, null);
+        $this->assertContainerBuilderHasServiceDefinitionWithArgument(KernelEventSubscriber::class, 1, false);
     }
 
     public function testLoadWithCookieBlock(): void
@@ -33,11 +36,20 @@ final class NucleosGDPRExtensionTest extends AbstractExtensionTestCase
             'block_cookies' => null,
         ]);
 
-        $this->assertContainerBuilderHasService(KernelEventSubscriber::class);
-
         $this->assertContainerBuilderHasServiceDefinitionWithArgument(KernelEventSubscriber::class, 0, [
             'PHPSESSID',
         ]);
+    }
+
+    public function testLoadWithGoogleFLoC(): void
+    {
+        $this->load([
+            'privacy' => [
+                'google_floc' => true,
+            ],
+        ]);
+
+        $this->assertContainerBuilderHasServiceDefinitionWithArgument(KernelEventSubscriber::class, 1, true);
     }
 
     protected function getContainerExtensions(): array

@@ -19,7 +19,8 @@ return static function (ContainerConfigurator $container): void {
         ->set(KernelEventSubscriber::class)
             ->tag('kernel.event_subscriber')
             ->args([
-                [],
+                null,
+                false,
             ])
 
     ;

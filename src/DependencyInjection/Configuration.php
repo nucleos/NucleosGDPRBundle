@@ -19,12 +19,13 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 final class Configuration implements ConfigurationInterface
 {
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('nucleos_gdpr');
 
         $rootNode = $treeBuilder->getRootNode();
         $rootNode->append($this->getBlockCookiesNode());
+        $rootNode->append($this->getPrivacyNode());
 
         return $treeBuilder;
     }
@@ -39,6 +40,20 @@ final class Configuration implements ConfigurationInterface
                      ->defaultValue(['PHPSESSID'])
                      ->prototype('scalar')->end()
                 ->end()
+            ->end()
+        ;
+
+        return $node;
+    }
+
+    private function getPrivacyNode(): NodeDefinition
+    {
+        $node = (new TreeBuilder('privacy'))->getRootNode();
+
+        $node
+            ->addDefaultsIfNotSet()
+            ->children()
+                ->booleanNode('google_floc')->defaultFalse()->end()
             ->end()
         ;
 

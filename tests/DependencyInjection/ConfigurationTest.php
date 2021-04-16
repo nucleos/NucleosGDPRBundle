@@ -24,6 +24,28 @@ final class ConfigurationTest extends TestCase
         $config = $processor->processConfiguration(new Configuration(), []);
 
         $expected = [
+            'privacy' => [
+                'google_floc' => false,
+            ],
+        ];
+
+        static::assertSame($expected, $config);
+    }
+
+    public function testEnabledGoogleFLoC(): void
+    {
+        $processor = new Processor();
+
+        $config = $processor->processConfiguration(new Configuration(), [[
+            'privacy' => [
+                'google_floc' => true,
+            ],
+        ]]);
+
+        $expected = [
+            'privacy' => [
+                'google_floc' => true,
+            ],
         ];
 
         static::assertSame($expected, $config);
@@ -40,6 +62,9 @@ final class ConfigurationTest extends TestCase
         $expected = [
             'block_cookies' => [
                 'keep'      => ['PHPSESSID'],
+            ],
+            'privacy' => [
+                'google_floc' => false,
             ],
         ];
 
@@ -59,6 +84,9 @@ final class ConfigurationTest extends TestCase
         $expected = [
             'block_cookies' => [
                 'keep'      => ['SOMEKEY', 'OTHERKEY'],
+            ],
+            'privacy' => [
+                'google_floc' => false,
             ],
         ];
 
