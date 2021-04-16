@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Nucleos\GDPRBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -24,25 +24,24 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder('nucleos_gdpr');
 
         $rootNode = $treeBuilder->getRootNode();
-
-        $this->addBlockCookiesSection($rootNode);
+        $rootNode->append($this->getBlockCookiesNode());
 
         return $treeBuilder;
     }
 
-    private function addBlockCookiesSection(ArrayNodeDefinition $node): void
+    private function getBlockCookiesNode(): NodeDefinition
     {
+        $node = (new TreeBuilder('block_cookies'))->getRootNode();
+
         $node
             ->children()
-                ->arrayNode('block_cookies')
-                    ->children()
-                        ->arrayNode('keep')
-                             ->defaultValue(['PHPSESSID'])
-                             ->prototype('scalar')->end()
-                        ->end()
-                    ->end()
+                ->arrayNode('keep')
+                     ->defaultValue(['PHPSESSID'])
+                     ->prototype('scalar')->end()
                 ->end()
             ->end()
         ;
+
+        return $node;
     }
 }
