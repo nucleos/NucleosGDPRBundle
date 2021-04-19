@@ -11,7 +11,9 @@
         "sonata-block",
         "block",
         "widget",
-        "bundle"
+        "bundle",
+        "floc",
+        "privacy"
     ],
     "homepage": "https://nucleos.rocks",
     "license": "MIT",
