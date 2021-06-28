@@ -6,8 +6,8 @@
     "devDependencies": {
         "@babel/core": "^7.14.6",
         "@babel/preset-env": "^7.14.7",
-        "@size-limit/preset-small-lib": "^4.12.0",
-        "@size-limit/webpack": "^4.12.0",
+        "@size-limit/preset-small-lib": "^5.0.1",
+        "@size-limit/webpack": "^5.0.1",
         "@symfony/webpack-encore": "^1.5.0",
         "babel-eslint": "^10.1.0",
         "babel-loader": "^8.2.2",
@@ -18,7 +18,7 @@
         "eslint-watch": "^7.0.0",
         "node-sass": "^6.0.1",
         "sass-loader": "^12.1.0",
-        "size-limit": "^4.12.0"
+        "size-limit": "^5.0.1"
     },
     "main": "assets/widget.js",
     "files": [
