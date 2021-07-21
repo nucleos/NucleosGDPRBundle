@@ -5,7 +5,7 @@
     "author": "Christian Gripp <mail@nucleos.de>",
     "devDependencies": {
         "@babel/core": "^7.14.6",
-        "@babel/preset-env": "^7.14.7",
+        "@babel/preset-env": "^7.14.8",
         "@size-limit/preset-small-lib": "^5.0.1",
         "@size-limit/webpack": "^5.0.1",
         "@symfony/webpack-encore": "^1.5.0",
