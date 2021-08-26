@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="nucleos_gdpr.block.information">
+        <source>nucleos_gdpr.block.information</source>
+        <target>Informacions RGPD</target>
+      </trans-unit>
+      <trans-unit id="cookie_confirm">
+        <source>cookie_confirm</source>
+        <target>Confirmar</target>
+      </trans-unit>
+      <trans-unit id="cookie_information">
+        <source>cookie_information</source>
+        <target>Utilizam de cookies que vos dònan la melhora experiéncia sus nòstre site web. Se contunhatz sens cambiar los paramètres considerarem qu'acceptatz totes los cookies del site .</target>
+      </trans-unit>
+      <trans-unit id="cookie_data_protection">
+        <source>cookie_data_protection</source>
+        <target>Mai d'informacions</target>
+      </trans-unit>
+      <trans-unit id="form.label_text">
+        <source>form.label_text</source>
+        <target>Tèxt</target>
+      </trans-unit>
+      <trans-unit id="form.label_url">
+        <source>form.label_url</source>
+        <target>URL</target>
+      </trans-unit>
+      <trans-unit id="form.label_position">
+        <source>form.label_position</source>
+        <target>Posicion</target>
+      </trans-unit>
+      <trans-unit id="form.choice_top">
+        <source>form.choice_top</source>
+        <target>Amont</target>
+      </trans-unit>
+      <trans-unit id="form.choice_fixedtop">
+        <source>form.choice_fixedtop</source>
+        <target>Fixat ennaut</target>
+      </trans-unit>
+      <trans-unit id="form.choice_bottom">
+        <source>form.choice_bottom</source>
+        <target>Aval</target>
+      </trans-unit>
+      <trans-unit id="form.choice_block">
+        <source>form.choice_block</source>
+        <target>Blocar</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
