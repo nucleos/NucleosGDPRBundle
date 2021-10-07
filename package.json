@@ -4,7 +4,7 @@
     "homepage": "https://nucleos.de",
     "author": "Christian Gripp <mail@nucleos.de>",
     "devDependencies": {
-        "@babel/core": "^7.15.5",
+        "@babel/core": "^7.15.8",
         "@babel/preset-env": "^7.15.8",
         "@size-limit/preset-small-lib": "^5.0.5",
         "@size-limit/webpack": "^5.0.5",
