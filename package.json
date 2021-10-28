@@ -17,7 +17,7 @@
         "eslint-loader": "^4.0.2",
         "eslint-watch": "^7.0.0",
         "node-sass": "^6.0.1",
-        "sass-loader": "^12.2.0",
+        "sass-loader": "^12.3.0",
         "size-limit": "^6.0.3"
     },
     "main": "assets/widget.js",
