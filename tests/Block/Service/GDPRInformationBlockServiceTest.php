@@ -43,7 +43,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
         $this->request = new Request();
 
         $this->requestStack = $this->createMock(RequestStack::class);
-        $this->requestStack->method('getMasterRequest')
+        $this->requestStack->method('getMainRequest')
             ->willReturn($this->request)
         ;
     }

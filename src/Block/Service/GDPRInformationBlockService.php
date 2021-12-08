@@ -71,9 +71,9 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
         $this->configureEditForm($form, $block);
     }
 
-    public function configureEditForm(FormMapper $formMapper, BlockInterface $block): void
+    public function configureEditForm(FormMapper $form, BlockInterface $block): void
     {
-        $formMapper->add('settings', ImmutableArrayType::class, [
+        $form->add('settings', ImmutableArrayType::class, [
             'keys' => [
                 ['text', TextType::class, [
                     'label'    => 'form.label_text',
@@ -125,7 +125,7 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
 
     private function hasGdprCookie(): bool
     {
-        $request = $this->request->getMasterRequest();
+        $request = $this->request->getMainRequest();
 
         return null !== $request && $request->cookies->getBoolean(self::COOKIE_NAME);
     }
