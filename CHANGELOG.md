@@ -2,27 +2,32 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.4.0 - TBD
+## 2.4.0 - 2021-12-08
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [2.4.0](https://github.com/nucleos/NucleosGDPRBundle/milestone/6)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 2.4.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **6**
+- Total contributors: **2**
 
-### Removed
+#### dependency
 
-- Nothing.
+ - [606: Add symfony 6 support](https://github.com/nucleos/NucleosGDPRBundle/pull/606) thanks to @core23
+ - [605: Drop symfony 4 support](https://github.com/nucleos/NucleosGDPRBundle/pull/605) thanks to @core23
+ - [592: Drop PHP 7 support](https://github.com/nucleos/NucleosGDPRBundle/pull/592) thanks to @core23
 
-### Fixed
+#### Enhancement
 
-- Nothing.
+ - [604: Drop node-sass](https://github.com/nucleos/NucleosGDPRBundle/pull/604) thanks to @core23
+ - [601: Update tools and use make to run them](https://github.com/nucleos/NucleosGDPRBundle/pull/601) thanks to @core23
+ - [533: Add Occitan translation](https://github.com/nucleos/NucleosGDPRBundle/pull/533) thanks to @ensag-dev
 
 ## 2.3.0 - 2021-04-19
 
