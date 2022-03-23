@@ -10,7 +10,7 @@
         "@size-limit/webpack": "^7.0.8",
         "@symfony/webpack-encore": "^1.8.2",
         "babel-eslint": "^10.1.0",
-        "babel-loader": "^8.2.3",
+        "babel-loader": "^8.2.4",
         "eslint": "^7.32.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-plugin-import": "^2.25.4",
