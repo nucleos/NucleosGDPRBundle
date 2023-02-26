@@ -63,7 +63,7 @@ final class ConfigurationTest extends TestCase
             'block_cookies' => [
                 'keep'      => ['PHPSESSID'],
             ],
-            'privacy' => [
+            'privacy'       => [
                 'google_floc' => false,
             ],
         ];
@@ -85,7 +85,7 @@ final class ConfigurationTest extends TestCase
             'block_cookies' => [
                 'keep'      => ['SOMEKEY', 'OTHERKEY'],
             ],
-            'privacy' => [
+            'privacy'       => [
                 'google_floc' => false,
             ],
         ];
