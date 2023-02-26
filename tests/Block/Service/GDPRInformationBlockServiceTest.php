@@ -27,14 +27,11 @@ use Symfony\Component\HttpFoundation\Response;
 final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 {
     /**
-     * @var MockObject|RequestStack
+     * @var MockObject&RequestStack
      */
-    private $requestStack;
+    private RequestStack $requestStack;
 
-    /**
-     * @var Request
-     */
-    private $request;
+    private Request $request;
 
     protected function setUp(): void
     {

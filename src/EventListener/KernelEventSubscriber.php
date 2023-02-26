@@ -22,12 +22,9 @@ final class KernelEventSubscriber implements EventSubscriberInterface
     /**
      * @var string[]|null
      */
-    private $whitelist;
+    private ?array $whitelist;
 
-    /**
-     * @var bool
-     */
-    private $googleFLOC;
+    private bool $googleFLOC;
 
     /**
      * @param string[] $whitelist
