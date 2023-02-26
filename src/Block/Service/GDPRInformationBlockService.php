@@ -35,10 +35,7 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
 {
     public const COOKIE_NAME = 'GDPR_COOKIE_LAW_CONSENT';
 
-    /**
-     * @var RequestStack
-     */
-    private $request;
+    private RequestStack $request;
 
     public function __construct(Environment $twig, RequestStack $request)
     {
@@ -74,7 +71,7 @@ final class GDPRInformationBlockService extends AbstractBlockService implements 
     public function configureEditForm(FormMapper $form, BlockInterface $block): void
     {
         $form->add('settings', ImmutableArrayType::class, [
-            'keys' => [
+            'keys'               => [
                 ['text', TextType::class, [
                     'label'    => 'form.label_text',
                     'required' => false,
