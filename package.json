@@ -8,7 +8,7 @@
         "@babel/preset-env": "^7.18.0",
         "@size-limit/preset-small-lib": "^8.0.0",
         "@size-limit/webpack": "^8.0.0",
-        "@symfony/webpack-encore": "^2.1.0",
+        "@symfony/webpack-encore": "^4.0.0",
         "babel-eslint": "^10.1.0",
         "babel-loader": "^9.0.0",
         "eslint": "^8.0.0",
