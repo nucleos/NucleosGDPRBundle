@@ -63,7 +63,7 @@ final class AppKernel extends Kernel
             $routes
                     ->add('twig-test', '/twig-test')
                     ->controller(TwigTestController::class)
-                ;
+            ;
 
             return;
         }
