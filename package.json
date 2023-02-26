@@ -1,8 +1,8 @@
 {
     "name": "@nucleos/gdpr-bundle",
     "version": "1.0.0",
-    "homepage": "https://nucleos.de",
-    "author": "Christian Gripp <mail@nucleos.de>",
+    "homepage": "https://nucleos.rocks",
+    "author": "Christian Gripp <mail@core23.de>",
     "devDependencies": {
         "@babel/core": "^7.20.12",
         "@babel/preset-env": "^7.20.2",
