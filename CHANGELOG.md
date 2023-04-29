@@ -2,27 +2,34 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.5.0 - TBD
+## 2.5.0 - 2023-04-29
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [2.5.0](https://github.com/nucleos/NucleosGDPRBundle/milestone/8)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 2.5.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **8**
+- Total contributors: **3**
 
-### Removed
+#### dependency
 
-- Nothing.
+ - [820: Drop symfony 6.1 support](https://github.com/nucleos/NucleosGDPRBundle/pull/820) thanks to @core23
+ - [818: Update dependency webpack to v5.76.0 &#91;SECURITY&#93;](https://github.com/nucleos/NucleosGDPRBundle/pull/818) thanks to @renovate[bot]
+ - [813: Update frontend dependencies](https://github.com/nucleos/NucleosGDPRBundle/pull/813) thanks to @core23
+ - [812: Drop support for PHP 8.0](https://github.com/nucleos/NucleosGDPRBundle/pull/812) thanks to @core23
+ - [811: Update dependency phpunit/phpunit to v10](https://github.com/nucleos/NucleosGDPRBundle/pull/811) thanks to @renovate[bot]
+ - [805: Bump loader-utils from 2.0.3 to 2.0.4](https://github.com/nucleos/NucleosGDPRBundle/pull/805) thanks to @dependabot[bot]
+ - [804: Bump loader-utils from 2.0.0 to 2.0.3](https://github.com/nucleos/NucleosGDPRBundle/pull/804) thanks to @dependabot[bot]
 
-### Fixed
+#### Enhancement
 
-- Nothing.
+ - [632: Use shared pipelines](https://github.com/nucleos/NucleosGDPRBundle/pull/632) thanks to @core23
 
 ## 2.4.0 - 2021-12-08
 
