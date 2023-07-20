@@ -2,27 +2,29 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.6.0 - TBD
+## 2.6.0 - 2023-07-20
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [2.6.0](https://github.com/nucleos/NucleosGDPRBundle/milestone/10)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 2.6.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **3**
+- Total contributors: **2**
 
-### Removed
+#### dependency
 
-- Nothing.
+ - [826: Add support for latest sonata dependencies](https://github.com/nucleos/NucleosGDPRBundle/pull/826) thanks to @core23
 
-### Fixed
+#### dependency,javascript
 
-- Nothing.
+ - [824: Bump word-wrap from 1.2.3 to 1.2.4](https://github.com/nucleos/NucleosGDPRBundle/pull/824) thanks to @dependabot[bot]
+ - [823: Bump semver from 6.3.0 to 6.3.1](https://github.com/nucleos/NucleosGDPRBundle/pull/823) thanks to @dependabot[bot]
 
 ## 2.5.0 - 2023-04-29
 
