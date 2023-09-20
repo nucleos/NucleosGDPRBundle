@@ -105,41 +105,6 @@ final class KernelEventSubscriberTest extends TestCase
         $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
     }
 
-    public function testAddFLoCPolicy(): void
-    {
-        $response = new Response();
-
-        $event = new ResponseEvent(
-            $this->createStub(HttpKernelInterface::class),
-            $this->createStub(Request::class),
-            0,
-            $response
-        );
-
-        $subscriber = new KernelEventSubscriber(null, false);
-        $subscriber->addFLoCPolicy($event);
-
-        static::assertTrue($response->headers->has('Permissions-Policy'));
-        static::assertSame('interest-cohort=()', $response->headers->get('Permissions-Policy'));
-    }
-
-    public function testAddFLoCPolicyWithDisabledOption(): void
-    {
-        $response = new Response();
-
-        $event = new ResponseEvent(
-            $this->createStub(HttpKernelInterface::class),
-            $this->createStub(Request::class),
-            0,
-            $response
-        );
-
-        $subscriber = new KernelEventSubscriber(null, true);
-        $subscriber->addFLoCPolicy($event);
-
-        static::assertFalse($response->headers->has('Permissions-Policy'));
-    }
-
     private function assertHasCookie(string $cookieName, Response $response): void
     {
         static::assertCount(1, array_filter($response->headers->getCookies(), static function (Cookie $cookie) use ($cookieName): bool {

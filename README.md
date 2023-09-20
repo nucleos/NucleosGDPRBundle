@@ -16,7 +16,8 @@ This bundle provides a GDPR conform cookie information for symfony applications.
 
 ## Installation
 
-Open a command console, enter your project directory and execute the following command to download the latest stable version of this bundle:
+Open a command console, enter your project directory and execute the following command to download the latest stable
+version of this bundle:
 
 ```
 composer require nucleos/gdpr-bundle
@@ -58,20 +59,6 @@ nucleos_gdpr:
           - PHPSESSID
           - ADMIN_.*
 ```
-
-
-### Google FLoC (Federated Learning of Cohorts)
-
-By default a `Permissions-Policy` header is added to every response to respect user privacy. You can enable Google FLoC tracking via the following configuration:
-
-```yaml
-# config/packages/nucleos_gdpr.yaml
-
-nucleos_gdpr:
-    privacy:
-        google_floc: true
-```
-
 
 ### Assets
 
