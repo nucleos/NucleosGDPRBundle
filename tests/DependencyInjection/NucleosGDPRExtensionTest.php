@@ -41,17 +41,6 @@ final class NucleosGDPRExtensionTest extends AbstractExtensionTestCase
         ]);
     }
 
-    public function testLoadWithGoogleFLoC(): void
-    {
-        $this->load([
-            'privacy' => [
-                'google_floc' => true,
-            ],
-        ]);
-
-        $this->assertContainerBuilderHasServiceDefinitionWithArgument(KernelEventSubscriber::class, 1, true);
-    }
-
     protected function getContainerExtensions(): array
     {
         return [

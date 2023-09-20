@@ -35,7 +35,6 @@ final class NucleosGDPRExtension extends Extension
 
         $container->getDefinition(KernelEventSubscriber::class)
             ->replaceArgument(0, isset($config['block_cookies']) ? $config['block_cookies']['keep'] : null)
-            ->replaceArgument(1, $config['privacy']['google_floc'])
         ;
     }
 }

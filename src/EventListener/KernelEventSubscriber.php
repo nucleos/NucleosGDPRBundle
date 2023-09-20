@@ -24,15 +24,12 @@ final class KernelEventSubscriber implements EventSubscriberInterface
      */
     private ?array $whitelist;
 
-    private bool $googleFLOC;
-
     /**
      * @param string[] $whitelist
      */
-    public function __construct(?array $whitelist = [], bool $googleFLOC = false)
+    public function __construct(?array $whitelist = [])
     {
         $this->whitelist  = $whitelist;
-        $this->googleFLOC = $googleFLOC;
     }
 
     public static function getSubscribedEvents(): array
@@ -40,7 +37,6 @@ final class KernelEventSubscriber implements EventSubscriberInterface
         return [
             KernelEvents::RESPONSE => [
                 ['cleanCookies', 0],
-                ['addFLoCPolicy', 0],
             ],
         ];
     }
@@ -68,16 +64,6 @@ final class KernelEventSubscriber implements EventSubscriberInterface
 
             $headers->removeCookie($cookie->getName());
         }
-    }
-
-    public function addFLoCPolicy(ResponseEvent $event): void
-    {
-        if (true === $this->googleFLOC) {
-            return;
-        }
-
-        $response = $event->getResponse();
-        $response->headers->set('Permissions-Policy', 'interest-cohort=()');
     }
 
     /**
