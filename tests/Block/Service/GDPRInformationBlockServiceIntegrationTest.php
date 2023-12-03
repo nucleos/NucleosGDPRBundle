@@ -30,6 +30,6 @@ final class GDPRInformationBlockServiceIntegrationTest extends TestCase
 
         $client->request('GET', '/twig-test');
 
-        static::assertSame(200, $client->getResponse()->getStatusCode());
+        self::assertSame(200, $client->getResponse()->getStatusCode());
     }
 }

@@ -45,7 +45,7 @@ final class KernelEventSubscriberTest extends TestCase
         $subscriber = new KernelEventSubscriber(null);
         $subscriber->cleanCookies($event);
 
-        static::assertCount(4, $response->headers->getCookies());
+        self::assertCount(4, $response->headers->getCookies());
         $this->assertHasCookie(self::SOME_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
@@ -73,7 +73,7 @@ final class KernelEventSubscriberTest extends TestCase
         ]);
         $subscriber->cleanCookies($event);
 
-        static::assertCount(4, $response->headers->getCookies());
+        self::assertCount(4, $response->headers->getCookies());
         $this->assertHasCookie(self::SOME_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
@@ -100,7 +100,7 @@ final class KernelEventSubscriberTest extends TestCase
         ]);
         $subscriber->cleanCookies($event);
 
-        static::assertCount(2, $response->headers->getCookies());
+        self::assertCount(2, $response->headers->getCookies());
         $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
     }
@@ -119,8 +119,8 @@ final class KernelEventSubscriberTest extends TestCase
         $subscriber = new KernelEventSubscriber(null, false);
         $subscriber->addFLoCPolicy($event);
 
-        static::assertTrue($response->headers->has('Permissions-Policy'));
-        static::assertSame('interest-cohort=()', $response->headers->get('Permissions-Policy'));
+        self::assertTrue($response->headers->has('Permissions-Policy'));
+        self::assertSame('interest-cohort=()', $response->headers->get('Permissions-Policy'));
     }
 
     public function testAddFLoCPolicyWithDisabledOption(): void
@@ -137,12 +137,12 @@ final class KernelEventSubscriberTest extends TestCase
         $subscriber = new KernelEventSubscriber(null, true);
         $subscriber->addFLoCPolicy($event);
 
-        static::assertFalse($response->headers->has('Permissions-Policy'));
+        self::assertFalse($response->headers->has('Permissions-Policy'));
     }
 
     private function assertHasCookie(string $cookieName, Response $response): void
     {
-        static::assertCount(1, array_filter($response->headers->getCookies(), static function (Cookie $cookie) use ($cookieName): bool {
+        self::assertCount(1, array_filter($response->headers->getCookies(), static function (Cookie $cookie) use ($cookieName): bool {
             return $cookie->getName() === $cookieName;
         }));
     }

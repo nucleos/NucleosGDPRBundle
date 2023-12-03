@@ -23,6 +23,6 @@ final class NucleosGDPRBundleTest extends TestCase
     {
         $bundle = new NucleosGDPRBundle();
 
-        static::assertInstanceOf(NucleosGDPRExtension::class, $bundle->getContainerExtension());
+        self::assertInstanceOf(NucleosGDPRExtension::class, $bundle->getContainerExtension());
     }
 }
