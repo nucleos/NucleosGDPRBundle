@@ -22,6 +22,5 @@ return static function (ContainerConfigurator $container): void {
                 null,
                 false,
             ])
-
     ;
 };

@@ -70,7 +70,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
         $response = new Response();
 
-        $this->twig->expects(static::once())->method('render')
+        $this->twig->expects(self::once())->method('render')
             ->with(
                 '@NucleosGDPR/Block/block_gdpr.html.twig',
                 [
@@ -84,8 +84,8 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
         $blockService = new GDPRInformationBlockService($this->twig, $this->requestStack);
 
-        static::assertSame($response, $blockService->execute($blockContext, $response));
-        static::assertSame('TWIG_CONTENT', $response->getContent());
+        self::assertSame($response, $blockService->execute($blockContext, $response));
+        self::assertSame('TWIG_CONTENT', $response->getContent());
     }
 
     public function testExecuteWithExistingCookie(): void
@@ -104,7 +104,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
         $blockService = new GDPRInformationBlockService($this->twig, $this->requestStack);
         $response     = $blockService->execute($blockContext);
 
-        static::assertTrue($response->isEmpty());
+        self::assertTrue($response->isEmpty());
     }
 
     public function testGetMetadata(): void
@@ -113,10 +113,10 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
 
         $metadata = $blockService->getMetadata();
 
-        static::assertSame('nucleos_gdpr.block.information', $metadata->getTitle());
-        static::assertNull($metadata->getImage());
-        static::assertSame('NucleosGDPRBundle', $metadata->getDomain());
-        static::assertSame([
+        self::assertSame('nucleos_gdpr.block.information', $metadata->getTitle());
+        self::assertNull($metadata->getImage());
+        self::assertSame('NucleosGDPRBundle', $metadata->getDomain());
+        self::assertSame([
             'class' => 'fa fa-balance-scale',
         ], $metadata->getOptions());
     }
@@ -128,7 +128,7 @@ final class GDPRInformationBlockServiceTest extends BlockServiceTestCase
         $block = new Block();
 
         $formMapper = $this->createMock(FormMapper::class);
-        $formMapper->expects(static::once())->method('add');
+        $formMapper->expects(self::once())->method('add');
 
         $blockService->configureEditForm($formMapper, $block);
     }
