@@ -15,6 +15,4 @@ namespace Nucleos\GDPRBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class NucleosGDPRBundle extends Bundle
-{
-}
+final class NucleosGDPRBundle extends Bundle {}

@@ -29,7 +29,7 @@ final class ConfigurationTest extends TestCase
             ],
         ];
 
-        static::assertSame($expected, $config);
+        self::assertSame($expected, $config);
     }
 
     public function testEnabledGoogleFLoC(): void
@@ -48,7 +48,7 @@ final class ConfigurationTest extends TestCase
             ],
         ];
 
-        static::assertSame($expected, $config);
+        self::assertSame($expected, $config);
     }
 
     public function testBlockedCookieEnabled(): void
@@ -68,7 +68,7 @@ final class ConfigurationTest extends TestCase
             ],
         ];
 
-        static::assertSame($expected, $config);
+        self::assertSame($expected, $config);
     }
 
     public function testBlockedCookieOptions(): void
@@ -90,6 +90,6 @@ final class ConfigurationTest extends TestCase
             ],
         ];
 
-        static::assertSame($expected, $config);
+        self::assertSame($expected, $config);
     }
 }
