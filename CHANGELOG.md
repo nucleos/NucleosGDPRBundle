@@ -2,27 +2,39 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.7.0 - TBD
+## 2.7.0 - 2024-03-25
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [2.7.0](https://github.com/nucleos/NucleosGDPRBundle/milestone/12)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 2.7.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **10**
+- Total contributors: **3**
 
-### Removed
+#### dependency
 
-- Nothing.
+ - [857: Bump webpack-dev-middleware from 5.3.3 to 5.3.4](https://github.com/nucleos/NucleosGDPRBundle/pull/857) thanks to @dependabot[bot]
+ - [856: Bump follow-redirects from 1.15.4 to 1.15.6](https://github.com/nucleos/NucleosGDPRBundle/pull/856) thanks to @dependabot[bot]
+ - [855: Update dependency psalm/plugin-phpunit to ^0.19](https://github.com/nucleos/NucleosGDPRBundle/pull/855) thanks to @renovate[bot]
+ - [850: Bump to symfony ^6.4 || ^7.0](https://github.com/nucleos/NucleosGDPRBundle/pull/850) thanks to @core23
+ - [847: Update dependency symfony/phpunit-bridge to v7](https://github.com/nucleos/NucleosGDPRBundle/pull/847) thanks to @renovate[bot]
+ - [846: Update dependency matthiasnoback/symfony-dependency-injection-test to v5](https://github.com/nucleos/NucleosGDPRBundle/pull/846) thanks to @renovate[bot]
 
-### Fixed
+#### dependency,javascript
 
-- Nothing.
+ - [851: Bump follow-redirects from 1.14.8 to 1.15.4](https://github.com/nucleos/NucleosGDPRBundle/pull/851) thanks to @dependabot[bot]
+ - [836: Bump @babel/traverse from 7.21.2 to 7.23.2](https://github.com/nucleos/NucleosGDPRBundle/pull/836) thanks to @dependabot[bot]
+ - [835: Bump postcss from 8.4.14 to 8.4.31](https://github.com/nucleos/NucleosGDPRBundle/pull/835) thanks to @dependabot[bot]
+
+#### Enhancement
+
+ - [848: Update tools ](https://github.com/nucleos/NucleosGDPRBundle/pull/848) thanks to @core23
 
 ## 2.6.0 - 2023-07-20
 
