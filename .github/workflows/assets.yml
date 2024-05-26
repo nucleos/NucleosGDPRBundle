@@ -1,12 +1,12 @@
 name: 'Assets'
 
 on:
-  create:
   pull_request:
   push:
     branches:
       - '[0-9]+.[0-9]+.x'
       - 'refs/pull/*'
+    tags:
 
 jobs:
   webpack:
