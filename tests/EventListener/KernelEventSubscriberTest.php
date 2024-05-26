@@ -36,8 +36,8 @@ final class KernelEventSubscriberTest extends TestCase
         $response->headers->setCookie(Cookie::create(GDPRInformationBlockService::COOKIE_NAME));
 
         $event = new ResponseEvent(
-            $this->createStub(HttpKernelInterface::class),
-            $this->createStub(Request::class),
+            self::createStub(HttpKernelInterface::class),
+            self::createStub(Request::class),
             0,
             $response
         );
@@ -45,7 +45,7 @@ final class KernelEventSubscriberTest extends TestCase
         $subscriber = new KernelEventSubscriber(null);
         $subscriber->cleanCookies($event);
 
-        static::assertCount(4, $response->headers->getCookies());
+        self::assertCount(4, $response->headers->getCookies());
         $this->assertHasCookie(self::SOME_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
@@ -61,8 +61,8 @@ final class KernelEventSubscriberTest extends TestCase
         $response->headers->setCookie(Cookie::create(GDPRInformationBlockService::COOKIE_NAME));
 
         $event = new ResponseEvent(
-            $this->createStub(HttpKernelInterface::class),
-            $this->createStub(Request::class),
+            self::createStub(HttpKernelInterface::class),
+            self::createStub(Request::class),
             0,
             $response
         );
@@ -73,7 +73,7 @@ final class KernelEventSubscriberTest extends TestCase
         ]);
         $subscriber->cleanCookies($event);
 
-        static::assertCount(4, $response->headers->getCookies());
+        self::assertCount(4, $response->headers->getCookies());
         $this->assertHasCookie(self::SOME_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
@@ -88,8 +88,8 @@ final class KernelEventSubscriberTest extends TestCase
         $response->headers->setCookie(Cookie::create(self::KEEP_REGED_EXAMPLE));
 
         $event = new ResponseEvent(
-            $this->createStub(HttpKernelInterface::class),
-            $this->createStub(Request::class),
+            self::createStub(HttpKernelInterface::class),
+            self::createStub(Request::class),
             0,
             $response
         );
@@ -100,14 +100,14 @@ final class KernelEventSubscriberTest extends TestCase
         ]);
         $subscriber->cleanCookies($event);
 
-        static::assertCount(2, $response->headers->getCookies());
+        self::assertCount(2, $response->headers->getCookies());
         $this->assertHasCookie(self::KEEP_COOKIE_NAME, $response);
         $this->assertHasCookie(self::KEEP_REGED_EXAMPLE, $response);
     }
 
     private function assertHasCookie(string $cookieName, Response $response): void
     {
-        static::assertCount(1, array_filter($response->headers->getCookies(), static function (Cookie $cookie) use ($cookieName): bool {
+        self::assertCount(1, array_filter($response->headers->getCookies(), static function (Cookie $cookie) use ($cookieName): bool {
             return $cookie->getName() === $cookieName;
         }));
     }

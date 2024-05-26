@@ -26,7 +26,7 @@ final class ConfigurationTest extends TestCase
         $expected = [
         ];
 
-        static::assertSame($expected, $config);
+        self::assertSame($expected, $config);
     }
 
     public function testBlockedCookieEnabled(): void
@@ -43,7 +43,7 @@ final class ConfigurationTest extends TestCase
             ],
         ];
 
-        static::assertSame($expected, $config);
+        self::assertSame($expected, $config);
     }
 
     public function testBlockedCookieOptions(): void
@@ -62,6 +62,6 @@ final class ConfigurationTest extends TestCase
             ],
         ];
 
-        static::assertSame($expected, $config);
+        self::assertSame($expected, $config);
     }
 }
