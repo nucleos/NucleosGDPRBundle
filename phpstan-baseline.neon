@@ -30,8 +30,3 @@ parameters:
 			count: 1
 			path: tests/Block/Service/GDPRInformationBlockServiceIntegrationTest.php
 
-		-
-			message: "#^Dynamic call to static method PHPUnit\\\\Framework\\\\TestCase\\:\\:createStub\\(\\)\\.$#"
-			count: 10
-			path: tests/EventListener/KernelEventSubscriberTest.php
-
