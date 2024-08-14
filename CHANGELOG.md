@@ -2,27 +2,31 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.8.0 - TBD
+## 2.8.0 - 2024-08-14
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [2.8.0](https://github.com/nucleos/NucleosGDPRBundle/milestone/13)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 2.8.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **5**
+- Total contributors: **2**
 
-### Removed
+#### Enhancement
 
-- Nothing.
+ - [876: Fix symfony deprecation](https://github.com/nucleos/NucleosGDPRBundle/pull/876) thanks to @core23
 
-### Fixed
+#### dependency
 
-- Nothing.
+ - [872: Bump ws from 8.6.0 to 8.17.1](https://github.com/nucleos/NucleosGDPRBundle/pull/872) thanks to @dependabot[bot]
+ - [871: Bump braces from 3.0.2 to 3.0.3](https://github.com/nucleos/NucleosGDPRBundle/pull/871) thanks to @dependabot[bot]
+ - [867: Update frontend dependencies](https://github.com/nucleos/NucleosGDPRBundle/pull/867) thanks to @core23
+ - [859: Bump express from 4.18.1 to 4.19.2](https://github.com/nucleos/NucleosGDPRBundle/pull/859) thanks to @dependabot[bot]
 
 ## 2.7.0 - 2024-03-25
 
