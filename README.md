@@ -1,3 +1,10 @@
+WARNING: This repository is deprecated
+======================================
+
+This project will no longer receive any updates.
+
+You might use [klaro.js](https://github.com/klaro-org/klaro-js) instead.
+
 NucleosGDPRBundle
 =================
 [![Latest Stable Version](https://poser.pugx.org/nucleos/gdpr-bundle/v/stable)](https://packagist.org/packages/nucleos/gdpr-bundle)

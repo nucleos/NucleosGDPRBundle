@@ -3,6 +3,7 @@
     "description": "This bundle provides a GDPR conform cookie information for symfony applications.",
     "license": "MIT",
     "type": "symfony-bundle",
+    "abandoned": true,
     "keywords": [
         "symfony",
         "gdpr",
